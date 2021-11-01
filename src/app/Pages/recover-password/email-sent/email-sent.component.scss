@@ -1,0 +1,19 @@
+@import "./../../../../tokens.scss";
+
+.emailSent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: $max-mobile-width;
+}
+
+.emailSentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.emailSentLogo {
+  height: 8rem;
+  object-fit: cover;
+}
