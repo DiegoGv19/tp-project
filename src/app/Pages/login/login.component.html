@@ -1,1 +1,32 @@
-<h1>login works!</h1>
+<div class="login">
+  <img class="loginLogo" src="assets/wide-logo.jpg" alt="wide-logo" />
+  <h1>Inicia sesión</h1>
+
+  <p>
+    Inicia sesión con tu usuario o correo electrónico y contraseña brindados por
+    nosotros
+  </p>
+
+  <form class="loginForm" (submit)="onSubmit($event)">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre de usuario o correo electrónico</mat-label>
+      <input type="email" matInput placeholder="Ex. user@example.com" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput id="password" />
+    </mat-form-field>
+
+    <button mat-button color="primary">Entrar</button>
+
+    <div class="loginOptions">
+      <label for="remember-me">
+        <input type="checkbox" id="remember-me" />
+        Recuérdame
+      </label>
+
+      <a href="#">Olvidé mi contraseña</a>
+    </div>
+  </form>
+</div>

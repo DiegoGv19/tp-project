@@ -7,20 +7,25 @@ import { LoginComponent } from './Pages/login/login.component';
 import { AdminComponent } from './Pages/admin/admin.component';
 import { MainComponent } from './Pages/main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    AdminComponent,
-    MainComponent
-  ],
+  declarations: [AppComponent, LoginComponent, AdminComponent, MainComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
+  exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
