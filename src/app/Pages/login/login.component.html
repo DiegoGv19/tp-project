@@ -8,12 +8,12 @@
   </p>
 
   <form class="loginForm" (submit)="onSubmit($event)">
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field appearance="fill">
       <mat-label>Nombre de usuario o correo electrónico</mat-label>
       <input type="email" matInput placeholder="Ex. user@example.com" />
     </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field appearance="fill">
       <mat-label>Contraseña</mat-label>
       <input type="password" matInput id="password" />
     </mat-form-field>
@@ -26,7 +26,7 @@
         Recuérdame
       </label>
 
-      <a href="#">Olvidé mi contraseña</a>
+      <a href="/recover-password">Olvidé mi contraseña</a>
     </div>
   </form>
 </div>
