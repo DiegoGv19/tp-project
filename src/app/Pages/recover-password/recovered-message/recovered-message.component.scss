@@ -1,0 +1,19 @@
+@import "./../../../../tokens.scss";
+
+.recoveredPassword {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: $max-mobile-width;
+}
+
+.recoveredPasswordForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recoveredPasswordLogo {
+  height: 8rem;
+  object-fit: cover;
+}
