@@ -13,6 +13,6 @@ export class RecoverPasswordComponent implements OnInit {
 
   onSubmit(event: Event) {
     event.preventDefault();
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/recover-password/email-sent');
   }
 }
