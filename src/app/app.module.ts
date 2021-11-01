@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';
 import { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';
+import { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { EmailSentComponent } from './Pages/recover-password/email-sent/email-se
     MainComponent,
     RecoverPasswordComponent,
     EmailSentComponent,
+    NewPasswordComponent,
   ],
   imports: [
     BrowserModule,
