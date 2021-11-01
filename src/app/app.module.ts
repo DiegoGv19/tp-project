@@ -10,8 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AdminComponent, MainComponent],
+  declarations: [AppComponent, LoginComponent, AdminComponent, MainComponent, RecoverPasswordComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
