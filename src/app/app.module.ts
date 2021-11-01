@@ -11,8 +11,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';
+import { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AdminComponent, MainComponent, RecoverPasswordComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    AdminComponent,
+    MainComponent,
+    RecoverPasswordComponent,
+    EmailSentComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,11 +29,7 @@ import { RecoverPasswordComponent } from './Pages/recover-password/recover-passw
     MatFormFieldModule,
     MatInputModule,
   ],
-  exports: [
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-  ],
+  exports: [MatButtonModule, MatFormFieldModule, MatInputModule],
   providers: [],
   bootstrap: [AppComponent],
 })

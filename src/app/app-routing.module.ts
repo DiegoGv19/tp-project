@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './Pages/admin/admin.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { MainComponent } from './Pages/main/main.component';
+import { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';
 import { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'recover-password',
     component: RecoverPasswordComponent,
+  },
+  {
+    path: 'recover-password/email-sent',
+    component: EmailSentComponent,
   },
   {
     path: 'admin',
