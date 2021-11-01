@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';
 import { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';
 import { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';
+import { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { NewPasswordComponent } from './Pages/recover-password/new-password/new-
     RecoverPasswordComponent,
     EmailSentComponent,
     NewPasswordComponent,
+    RecoveredMessageComponent,
   ],
   imports: [
     BrowserModule,

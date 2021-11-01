@@ -6,6 +6,7 @@ import { MainComponent } from './Pages/main/main.component';
 import { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';
 import { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';
 import { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';
+import { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'recover-password/new-password',
     component: NewPasswordComponent,
+  },
+  {
+    path: 'recover-password/recovered',
+    component: RecoveredMessageComponent,
   },
   {
     path: 'admin',
