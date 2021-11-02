@@ -1,0 +1,30 @@
+@import "./../../../tokens.scss";
+
+.fish-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 20rem;
+  max-width: $max-mobile-width;
+  max-height: $max-mobile-height;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: medium;
+    gap: 1rem;
+}
+
+.card-element {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: medium;
+    gap: 4rem;
+}
+
+.custom-td{
+    padding: 0 1.5rem;
+}

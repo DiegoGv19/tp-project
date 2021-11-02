@@ -1,1 +1,11 @@
-<p>main works!</p>
+<div class="main">
+    <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile mat-grid-tile [colspan]="3">
+            <img class="mainLogo" src="assets/wide-logo.jpg" alt="wide-logo" />
+        </mat-grid-tile>
+        <mat-grid-tile mat-grid-tile [colspan]="1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="openDialog()" >account_box</mat-icon>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <router-outlet></router-outlet>
+</div>

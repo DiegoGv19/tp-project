@@ -1,0 +1,14 @@
+@import "./../../../tokens.scss";
+
+
+.saved-check{
+    font-size: 60px;
+    align-self: center;
+}
+
+.saved-dialog{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: $max-mobile-width;
+}

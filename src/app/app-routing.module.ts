@@ -7,6 +7,9 @@ import { EmailSentComponent } from './Pages/recover-password/email-sent/email-se
 import { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';
 import { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';
 import { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';
+import { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';
+import { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';
+import { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';
 
 const routes: Routes = [
   {
@@ -30,12 +33,31 @@ const routes: Routes = [
     component: RecoveredMessageComponent,
   },
   {
+    path: 'main/display',
+    component: DisplayFishFarmsComponent,
+  },
+  
+  {
     path: 'admin',
     component: AdminComponent,
     children: [
       {
         path: '',
         component: MainComponent,
+        children: [
+          {
+            path: '',
+            component: DisplayFishFarmsComponent,
+          },
+          {
+            path: 'settings',
+            component: DoorSettingsComponent,
+          },
+          {
+            path: 'company',
+            component: CompanySettingsComponent,
+          },
+        ],
       },
       {
         path: 'main',
@@ -43,6 +65,7 @@ const routes: Routes = [
       },
     ],
   },
+  
 ];
 
 @NgModule({

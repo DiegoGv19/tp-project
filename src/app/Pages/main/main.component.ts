@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogProfileComponent } from '../dialog-profile/dialog-profile.component';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
+    
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogProfileComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }
