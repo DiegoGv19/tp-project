@@ -10,28 +10,40 @@ import { RecoveredMessageComponent } from './Pages/recover-password/recovered-me
 import { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';
 import { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';
 import { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';
+import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: LoginComponent,
   },
+  /*Iglesia y Moleche: En mi local no se refleja el responsive de ninguna de las vistas*/
   {
     path: 'recover-password',
-    component: RecoverPasswordComponent,
+    component: MainRecoverPasswordComponent,
+    children: [
+      {
+        path: '',
+        component: RecoverPasswordComponent,
+      },
+      {
+        path: 'email-sent',
+        component: EmailSentComponent,
+      },
+      {
+        path: 'new-password',
+        component: NewPasswordComponent,
+      },
+      {
+        path: 'recovered',
+        component: RecoveredMessageComponent,
+      },
+    ]
   },
-  {
-    path: 'recover-password/email-sent',
-    component: EmailSentComponent,
-  },
-  {
-    path: 'recover-password/new-password',
-    component: NewPasswordComponent,
-  },
-  {
-    path: 'recover-password/recovered',
-    component: RecoveredMessageComponent,
-  },
+
+  /*Iglesia: A que se debe este path
+    Falta el vista "Configuración de puertas automáticas - Mensaje de cambios guardados"
+  */
   {
     path: 'main/display',
     component: DisplayFishFarmsComponent,
@@ -57,12 +69,13 @@ const routes: Routes = [
             path: 'company',
             component: CompanySettingsComponent,
           },
+          {
+            path: 'main',
+            redirectTo: '',
+          },
         ],
       },
-      {
-        path: 'main',
-        redirectTo: '',
-      },
+      
     ],
   },
   

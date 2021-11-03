@@ -25,6 +25,7 @@ import { DoorSettingsComponent } from './Pages/door-settings/door-settings.compo
 import { DialogSavedComponent } from './Pages/dialog-saved/dialog-saved.component';
 import { DialogProfileComponent } from './Pages/dialog-profile/dialog-profile.component';
 import { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';
+import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { CompanySettingsComponent } from './Pages/company-settings/company-setti
     DialogSavedComponent,
     DialogProfileComponent,
     CompanySettingsComponent,
+    MainRecoverPasswordComponent,
   ],
   imports: [
     BrowserModule,
