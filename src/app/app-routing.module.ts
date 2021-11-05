@@ -40,15 +40,6 @@ const routes: Routes = [
       },
     ]
   },
-
-  /*Iglesia: A que se debe este path
-    Falta el vista "Configuración de puertas automáticas - Mensaje de cambios guardados"
-  */
-  {
-    path: 'main/display',
-    component: DisplayFishFarmsComponent,
-  },
-  
   {
     path: 'admin',
     component: AdminComponent,
@@ -69,13 +60,8 @@ const routes: Routes = [
             path: 'company',
             component: CompanySettingsComponent,
           },
-          {
-            path: 'main',
-            redirectTo: '',
-          },
         ],
       },
-      
     ],
   },
   
