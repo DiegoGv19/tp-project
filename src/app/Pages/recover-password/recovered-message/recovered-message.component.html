@@ -1,12 +1,20 @@
-<div class="recoveredPassword">
+<div class="recoveredPasswordContainer">
   <img
-    class="recoveredPasswordLogo"
+    class="recoveredPasswordHeroLogo"
     src="assets/wide-logo.jpg"
-    alt="wide-logo"
+    alt="wide-hero-logo"
   />
-  <h1>Contraseña reestablecida</h1>
 
-  <form class="recoveredPasswordForm" (submit)="onSubmit($event)">
-    <button mat-button color="primary">Ir a iniciar sesión</button>
-  </form>
+  <div class="recoveredPassword">
+    <img
+      class="recoveredPasswordLogo"
+      src="assets/wide-logo.jpg"
+      alt="wide-logo"
+    />
+    <h1>Contraseña reestablecida</h1>
+
+    <form class="recoveredPasswordForm" (submit)="onSubmit($event)">
+      <button mat-button color="primary">Ir a iniciar sesión</button>
+    </form>
+  </div>
 </div>

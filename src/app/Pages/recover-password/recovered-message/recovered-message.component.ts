@@ -13,6 +13,6 @@ export class RecoveredMessageComponent implements OnInit {
 
   onSubmit(event: Event) {
     event.preventDefault();
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/login');
   }
 }
