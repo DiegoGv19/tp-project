@@ -1,0 +1,17 @@
+.sensorContainer {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.sensorContainerMonitor {
+  display: flex;
+  gap: 1rem;
+}
+
+.infoTable {
+  p {
+    padding: 0;
+    margin: 0.5rem 0;
+  }
+}

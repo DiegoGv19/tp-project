@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatGridList, MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -39,8 +40,9 @@ export const AngularMaterialModules = {
     MatIconModule,
     MatRadioModule,
     MatDialogModule,
+    MatMenuModule,
   ],
-  exports: [MatButtonModule, MatFormFieldModule, MatInputModule],
+  exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],
 };
 
 @NgModule({
