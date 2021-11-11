@@ -45,49 +45,17 @@
     </tr>
   </table>
 
-  <div>
+  <div class="iotDevices">
     <h3>Dispositivos IoT</h3>
-    <div class="sensorContainer">
-      <p>Sensores de temperatura</p>
+
+    <div class="sensorContainer" *ngFor="let device of deviceData">
+      <p>{{ device.title }}</p>
       <div class="sensorContainerMonitor">
-        <div>
-          <img src="assets/image-frame.png" alt="" />
-          <p>Título</p>
-        </div>
-      </div>
-    </div>
-    <div class="sensorContainer">
-      <p>Sensores de pH</p>
-      <div class="sensorContainerMonitor">
-        <div>
-          <img src="assets/image-frame.png" alt="" />
-          <p>Título</p>
-        </div>
-      </div>
-    </div>
-    <div class="sensorContainer">
-      <p>Sensores de Oxígeno disuelto</p>
-      <div class="sensorContainerMonitor">
-        <div>
-          <img src="assets/image-frame.png" alt="" />
-          <p>Título</p>
-        </div>
-        <div>
-          <img src="assets/image-frame.png" alt="" />
-          <p>Título</p>
-        </div>
-      </div>
-    </div>
-    <div class="sensorContainer">
-      <p>Compuertas</p>
-      <div class="sensorContainerMonitor">
-        <div>
-          <img src="assets/image-frame.png" alt="" />
-          <p>Título</p>
-        </div>
-        <div>
-          <img src="assets/image-frame.png" alt="" />
-          <p>Título</p>
+        <div class="sensor" *ngFor="let sensor of device.sensors">
+          <div *ngIf="sensor.isActive" class="activeSignal"></div>
+          <div *ngIf="!sensor.isActive" class="inactiveSignal"></div>
+          <img src="{{ sensor.imageSrc }}" alt="" />
+          <p class="sensorTitle">{{ sensor.title }}</p>
         </div>
       </div>
     </div>
