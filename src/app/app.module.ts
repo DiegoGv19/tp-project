@@ -26,6 +26,12 @@ import { DialogSavedComponent } from './Pages/dialog-saved/dialog-saved.componen
 import { DialogProfileComponent } from './Pages/dialog-profile/dialog-profile.component';
 import { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';
 import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';
+import { DeviceDetailComponent } from './Pages/device-detail/device-detail.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { DialogDeviceMoreComponent } from './Pages/dialog-device-more/dialog-device-more.component';
+import { DialogDeviceUninstallComponent } from './Pages/dialog-device-uninstall/dialog-device-uninstall.component';
+import { DeviceAddComponent } from './Pages/device-add/device-add.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +48,10 @@ import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main
     DialogProfileComponent,
     CompanySettingsComponent,
     MainRecoverPasswordComponent,
+    DeviceDetailComponent,
+    DialogDeviceMoreComponent,
+    DialogDeviceUninstallComponent,
+    DeviceAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +65,8 @@ import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main
     MatCardModule,
     MatIconModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   exports: [MatButtonModule, MatFormFieldModule, MatInputModule],
   providers: [],
