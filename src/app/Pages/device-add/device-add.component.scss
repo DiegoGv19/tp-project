@@ -1,0 +1,42 @@
+
+  @import "./../../../tokens.scss";
+
+
+  .options-icon  {
+      position: absolute;
+      left: 300px;
+    }
+  
+  
+  
+  .device-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: $max-mobile-width;
+  }
+  
+  .deviceForm {
+      display: flex;
+      flex-direction: column;
+      gap: 0rem;
+    }
+  
+  .mat-form-field {
+      width: 400px;
+    }
+  .description-area
+  {
+      height: 100px;
+  }
+  .textarea{
+      height: 100px;
+    }
+  
+  .input-picture{
+      align-self: center;
+  }
+  .green-icon {
+      color: greenyellow;
+      align-content:end;
+  }
