@@ -674,7 +674,7 @@
         },
         {
             "name": "FishFarmDetailsComponent",
-            "id": "component-FishFarmDetailsComponent-fbcb1a13a993c51c5a7df2ce32b043b3",
+            "id": "component-FishFarmDetailsComponent-292fea6cff7c21df5920d8ca99cfae5d",
             "file": "src/app/components/admin/fish-farm-details/fish-farm-details.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -692,7 +692,18 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "deviceData",
+                    "defaultValue": "[\r\n    {\r\n      title: 'Sensores de temperatura',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device Y',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Sensores de pH',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Sensores de oxígeno disuelto',\r\n      sensors: [\r\n        {\r\n          isActive: false,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device Y',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Compuertas',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n      ],\r\n    },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Devices",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -700,7 +711,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 11,
+                    "line": 73,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -712,11 +723,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-fish-farm-details',\r\n  templateUrl: './fish-farm-details.component.html',\r\n  styleUrls: ['./fish-farm-details.component.scss'],\r\n})\r\nexport class FishFarmDetailsComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\ntype Devices = {\r\n  title: string;\r\n  sensors: {\r\n    isActive: boolean;\r\n    imageSrc: string;\r\n    title: string;\r\n  }[];\r\n}[];\r\n\r\n@Component({\r\n  selector: 'app-fish-farm-details',\r\n  templateUrl: './fish-farm-details.component.html',\r\n  styleUrls: ['./fish-farm-details.component.scss'],\r\n})\r\nexport class FishFarmDetailsComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  deviceData: Devices = [\r\n    {\r\n      title: 'Sensores de temperatura',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device Y',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Sensores de pH',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Sensores de oxígeno disuelto',\r\n      sensors: [\r\n        {\r\n          isActive: false,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device Y',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Compuertas',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n      ],\r\n    },\r\n  ];\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".sensorContainer {\r\n  display: flex;\r\n  gap: 1rem;\r\n  flex-direction: column;\r\n}\r\n\r\n.sensorContainerMonitor {\r\n  display: flex;\r\n  gap: 1rem;\r\n}\r\n\r\n.infoTable {\r\n  p {\r\n    padding: 0;\r\n    margin: 0.5rem 0;\r\n  }\r\n}\r\n",
+                    "data": ".sensorContainer {\r\n  display: flex;\r\n  gap: 1rem;\r\n  flex-direction: column;\r\n  & p {\r\n    margin: 0;\r\n  }\r\n}\r\n\r\n.iotDevices {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 2rem;\r\n}\r\n\r\n.sensorContainerMonitor {\r\n  display: flex;\r\n  gap: 1rem;\r\n  overflow: auto;\r\n}\r\n\r\n.infoTable {\r\n  min-width: 16rem;\r\n  & p {\r\n    padding: 0;\r\n    margin: 0.5rem 0;\r\n    text-align: left;\r\n  }\r\n}\r\n\r\n.sensor {\r\n  position: relative;\r\n  margin-right: 2rem;\r\n  & .activeSignal {\r\n    position: absolute;\r\n    right: -1rem;\r\n    top: 0.4rem;\r\n    display: flex;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    background-color: green;\r\n    border-radius: 50%;\r\n  }\r\n  & .inactiveSignal {\r\n    position: absolute;\r\n    right: -1rem;\r\n    top: 0.4rem;\r\n    display: flex;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    background-color: red;\r\n    border-radius: 50%;\r\n  }\r\n  & .sensorTitle {\r\n    text-align: center;\r\n  }\r\n}\r\n",
                     "styleUrl": "./fish-farm-details.component.scss"
                 }
             ],
@@ -727,12 +738,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
+                "line": 17
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-card>\r\n  <mat-card-title>Piscigranja de reproductores</mat-card-title>\r\n\r\n  <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n    <mat-icon>more_vert</mat-icon>\r\n  </button>\r\n  <mat-menu #menu=\"matMenu\">\r\n    <button mat-menu-item>\r\n      <span>Ver historial de mala calidad</span>\r\n    </button>\r\n    <button mat-menu-item>\r\n      <span>Editar</span>\r\n    </button>\r\n    <button mat-menu-item>\r\n      <span>Eliminar</span>\r\n    </button>\r\n  </mat-menu>\r\n\r\n  <table class=\"infoTable\">\r\n    <tr>\r\n      <th>\r\n        <p>Últimos parámetros</p>\r\n      </th>\r\n      <th>\r\n        <p>Nivel</p>\r\n      </th>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>Temperatura</p>\r\n      </td>\r\n      <td>22 ºC</td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>pH</p>\r\n      </td>\r\n      <td>6,5</td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>Oxígeno Disuelto</p>\r\n      </td>\r\n      <td>10.1 mg/L</td>\r\n    </tr>\r\n  </table>\r\n\r\n  <div>\r\n    <h3>Dispositivos IoT</h3>\r\n    <div class=\"sensorContainer\">\r\n      <p>Sensores de temperatura</p>\r\n      <div class=\"sensorContainerMonitor\">\r\n        <div>\r\n          <img src=\"assets/image-frame.png\" alt=\"\" />\r\n          <p>Título</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"sensorContainer\">\r\n      <p>Sensores de pH</p>\r\n      <div class=\"sensorContainerMonitor\">\r\n        <div>\r\n          <img src=\"assets/image-frame.png\" alt=\"\" />\r\n          <p>Título</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"sensorContainer\">\r\n      <p>Sensores de Oxígeno disuelto</p>\r\n      <div class=\"sensorContainerMonitor\">\r\n        <div>\r\n          <img src=\"assets/image-frame.png\" alt=\"\" />\r\n          <p>Título</p>\r\n        </div>\r\n        <div>\r\n          <img src=\"assets/image-frame.png\" alt=\"\" />\r\n          <p>Título</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"sensorContainer\">\r\n      <p>Compuertas</p>\r\n      <div class=\"sensorContainerMonitor\">\r\n        <div>\r\n          <img src=\"assets/image-frame.png\" alt=\"\" />\r\n          <p>Título</p>\r\n        </div>\r\n        <div>\r\n          <img src=\"assets/image-frame.png\" alt=\"\" />\r\n          <p>Título</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</mat-card>\r\n"
+            "templateData": "<mat-card>\r\n  <mat-card-title>Piscigranja de reproductores</mat-card-title>\r\n\r\n  <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n    <mat-icon>more_vert</mat-icon>\r\n  </button>\r\n  <mat-menu #menu=\"matMenu\">\r\n    <button mat-menu-item>\r\n      <span>Ver historial de mala calidad</span>\r\n    </button>\r\n    <button mat-menu-item>\r\n      <span>Editar</span>\r\n    </button>\r\n    <button mat-menu-item>\r\n      <span>Eliminar</span>\r\n    </button>\r\n  </mat-menu>\r\n\r\n  <table class=\"infoTable\">\r\n    <tr>\r\n      <th>\r\n        <p>Últimos parámetros</p>\r\n      </th>\r\n      <th>\r\n        <p>Nivel</p>\r\n      </th>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>Temperatura</p>\r\n      </td>\r\n      <td>22 ºC</td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>pH</p>\r\n      </td>\r\n      <td>6,5</td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>Oxígeno Disuelto</p>\r\n      </td>\r\n      <td>10.1 mg/L</td>\r\n    </tr>\r\n  </table>\r\n\r\n  <div class=\"iotDevices\">\r\n    <h3>Dispositivos IoT</h3>\r\n\r\n    <div class=\"sensorContainer\" *ngFor=\"let device of deviceData\">\r\n      <p>{{ device.title }}</p>\r\n      <div class=\"sensorContainerMonitor\">\r\n        <div class=\"sensor\" *ngFor=\"let sensor of device.sensors\">\r\n          <div *ngIf=\"sensor.isActive\" class=\"activeSignal\"></div>\r\n          <div *ngIf=\"!sensor.isActive\" class=\"inactiveSignal\"></div>\r\n          <img src=\"{{ sensor.imageSrc }}\" alt=\"\" />\r\n          <p class=\"sensorTitle\">{{ sensor.title }}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</mat-card>\r\n"
         },
         {
             "name": "LoginComponent",
@@ -1330,18 +1341,80 @@
                 "OnInit"
             ],
             "templateData": "<div class=\"recoverPasswordContainer\">\r\n  <img\r\n    class=\"recoverPasswordHeroLogo\"\r\n    src=\"assets/wide-logo.jpg\"\r\n    alt=\"wide-hero-logo\"\r\n  />\r\n\r\n  <div class=\"recoverPassword\">\r\n    <img\r\n      class=\"recoverPasswordLogo\"\r\n      src=\"assets/wide-logo.jpg\"\r\n      alt=\"wide-logo\"\r\n    />\r\n    <h1>Reestablecer contraseña</h1>\r\n\r\n    <p>\r\n      Ingresa tu correo electrónico para enviarte un enlace con el que puedas\r\n      restablecer tu contraseña\r\n    </p>\r\n\r\n    <form class=\"recoverPasswordForm\" (submit)=\"onSubmit($event)\">\r\n      <mat-form-field appearance=\"fill\">\r\n        <mat-label>Correo electrónico</mat-label>\r\n        <input type=\"email\" matInput placeholder=\"Ex. user@example.com\" />\r\n      </mat-form-field>\r\n\r\n      <button mat-button color=\"primary\">Enviar</button>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "RemoveFishFarmComponent",
+            "id": "component-RemoveFishFarmComponent-5b787f26819f97dc686384c5be37d137",
+            "file": "src/app/components/admin/remove-fish-farm/remove-fish-farm.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-remove-fish-farm",
+            "styleUrls": [
+                "./remove-fish-farm.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./remove-fish-farm.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-remove-fish-farm',\n  templateUrl: './remove-fish-farm.component.html',\n  styleUrls: ['./remove-fish-farm.component.scss']\n})\nexport class RemoveFishFarmComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./remove-fish-farm.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>remove-fish-farm works!</p>\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-594e2389a06c4de5097c612fd02c405b",
+            "id": "module-AppModule-cb18f275c6afbebe5b04e51fd33b1b02",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './Pages/login/login.component';\r\nimport { AdminComponent } from './Pages/admin/admin.component';\r\nimport { MainComponent } from './Pages/main/main.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatListModule } from '@angular/material/list';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatMenuModule } from '@angular/material/menu';\r\nimport { MatGridList, MatGridListModule } from '@angular/material/grid-list';\r\nimport { MatRadioModule } from '@angular/material/radio';\r\nimport { MatDialogModule } from '@angular/material/dialog';\r\nimport { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';\r\nimport { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';\r\nimport { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';\r\nimport { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';\r\nimport { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';\r\nimport { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';\r\nimport { DialogSavedComponent } from './Pages/dialog-saved/dialog-saved.component';\r\nimport { DialogProfileComponent } from './Pages/dialog-profile/dialog-profile.component';\r\nimport { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';\r\nimport { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';\r\nimport { FishFarmDetailsComponent } from './components/admin/fish-farm-details/fish-farm-details.component';\r\n\r\nexport const AngularMaterialModules = {\r\n  imports: [\r\n    MatGridListModule,\r\n    MatButtonModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatListModule,\r\n    MatCardModule,\r\n    MatIconModule,\r\n    MatRadioModule,\r\n    MatDialogModule,\r\n    MatMenuModule,\r\n  ],\r\n  exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],\r\n};\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    LoginComponent,\r\n    AdminComponent,\r\n    MainComponent,\r\n    RecoverPasswordComponent,\r\n    EmailSentComponent,\r\n    NewPasswordComponent,\r\n    RecoveredMessageComponent,\r\n    DisplayFishFarmsComponent,\r\n    DoorSettingsComponent,\r\n    DialogSavedComponent,\r\n    DialogProfileComponent,\r\n    CompanySettingsComponent,\r\n    MainRecoverPasswordComponent,\r\n    FishFarmDetailsComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    BrowserAnimationsModule,\r\n    ...AngularMaterialModules.imports,\r\n  ],\r\n  exports: [...AngularMaterialModules.exports],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './Pages/login/login.component';\r\nimport { AdminComponent } from './Pages/admin/admin.component';\r\nimport { MainComponent } from './Pages/main/main.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatListModule } from '@angular/material/list';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatMenuModule } from '@angular/material/menu';\r\nimport { MatGridList, MatGridListModule } from '@angular/material/grid-list';\r\nimport { MatRadioModule } from '@angular/material/radio';\r\nimport { MatDialogModule } from '@angular/material/dialog';\r\nimport { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';\r\nimport { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';\r\nimport { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';\r\nimport { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';\r\nimport { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';\r\nimport { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';\r\nimport { DialogSavedComponent } from './Pages/dialog-saved/dialog-saved.component';\r\nimport { DialogProfileComponent } from './Pages/dialog-profile/dialog-profile.component';\r\nimport { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';\r\nimport { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';\r\nimport { FishFarmDetailsComponent } from './components/admin/fish-farm-details/fish-farm-details.component';\nimport { RemoveFishFarmComponent } from './components/admin/remove-fish-farm/remove-fish-farm.component';\r\n\r\nexport const AngularMaterialModules = {\r\n  imports: [\r\n    MatGridListModule,\r\n    MatButtonModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatListModule,\r\n    MatCardModule,\r\n    MatIconModule,\r\n    MatRadioModule,\r\n    MatDialogModule,\r\n    MatMenuModule,\r\n  ],\r\n  exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],\r\n};\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    LoginComponent,\r\n    AdminComponent,\r\n    MainComponent,\r\n    RecoverPasswordComponent,\r\n    EmailSentComponent,\r\n    NewPasswordComponent,\r\n    RecoveredMessageComponent,\r\n    DisplayFishFarmsComponent,\r\n    DoorSettingsComponent,\r\n    DialogSavedComponent,\r\n    DialogProfileComponent,\r\n    CompanySettingsComponent,\r\n    MainRecoverPasswordComponent,\r\n    FishFarmDetailsComponent,\r\n    RemoveFishFarmComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    BrowserAnimationsModule,\r\n    ...AngularMaterialModules.imports,\r\n  ],\r\n  exports: [...AngularMaterialModules.exports],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1394,6 +1467,9 @@
                         },
                         {
                             "name": "RecoveredMessageComponent"
+                        },
+                        {
+                            "name": "RemoveFishFarmComponent"
                         }
                     ]
                 },
@@ -1516,6 +1592,16 @@
                 "defaultValue": "() => ({\r\n  props: {\r\n    label: 'FishFarmDetailsComponent',\r\n  },\r\n})"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/admin/remove-fish-farm/remove-fish-farm.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  props: {\r\n    label: 'RemoveFishFarmComponent',\r\n  },\r\n})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1526,7 +1612,19 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "Devices",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "literal type[]",
+                "file": "src/app/components/admin/fish-farm-details/fish-farm-details.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 181
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
             "src/app/app.module.ts": [
@@ -1597,11 +1695,37 @@
                     "type": "",
                     "defaultValue": "() => ({\r\n  props: {\r\n    label: 'FishFarmDetailsComponent',\r\n  },\r\n})"
                 }
+            ],
+            "src/app/components/admin/remove-fish-farm/remove-fish-farm.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/admin/remove-fish-farm/remove-fish-farm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  props: {\r\n    label: 'RemoveFishFarmComponent',\r\n  },\r\n})"
+                }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/app/components/admin/fish-farm-details/fish-farm-details.component.ts": [
+                {
+                    "name": "Devices",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "literal type[]",
+                    "file": "src/app/components/admin/fish-farm-details/fish-farm-details.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 181
+                }
+            ]
+        }
     },
     "routes": {
         "name": "<root>",
@@ -1823,11 +1947,30 @@
                 "linktype": "component",
                 "name": "FishFarmDetailsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
                 "filePath": "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/admin/remove-fish-farm/remove-fish-farm.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RemoveFishFarmComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/admin/remove-fish-farm/remove-fish-farm.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

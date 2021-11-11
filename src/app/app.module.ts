@@ -28,6 +28,7 @@ import { DialogProfileComponent } from './Pages/dialog-profile/dialog-profile.co
 import { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';
 import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';
 import { FishFarmDetailsComponent } from './components/admin/fish-farm-details/fish-farm-details.component';
+import { RemoveFishFarmComponent } from './components/admin/remove-fish-farm/remove-fish-farm.component';
 
 export const AngularMaterialModules = {
   imports: [
@@ -62,6 +63,7 @@ export const AngularMaterialModules = {
     CompanySettingsComponent,
     MainRecoverPasswordComponent,
     FishFarmDetailsComponent,
+    RemoveFishFarmComponent,
   ],
   imports: [
     BrowserModule,
