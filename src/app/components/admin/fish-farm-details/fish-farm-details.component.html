@@ -1,0 +1,63 @@
+<mat-card>
+  <mat-card-title>Piscigranja de reproductores</mat-card-title>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <span>Ver historial de mala calidad</span>
+    </button>
+    <button mat-menu-item>
+      <span>Editar</span>
+    </button>
+    <button mat-menu-item>
+      <span>Eliminar</span>
+    </button>
+  </mat-menu>
+
+  <table class="infoTable">
+    <tr>
+      <th>
+        <p>Últimos parámetros</p>
+      </th>
+      <th>
+        <p>Nivel</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p>Temperatura</p>
+      </td>
+      <td>22 ºC</td>
+    </tr>
+    <tr>
+      <td>
+        <p>pH</p>
+      </td>
+      <td>6,5</td>
+    </tr>
+    <tr>
+      <td>
+        <p>Oxígeno Disuelto</p>
+      </td>
+      <td>10.1 mg/L</td>
+    </tr>
+  </table>
+
+  <div class="iotDevices">
+    <h3>Dispositivos IoT</h3>
+
+    <div class="sensorContainer" *ngFor="let device of deviceData">
+      <p>{{ device.title }}</p>
+      <div class="sensorContainerMonitor">
+        <div class="sensor" *ngFor="let sensor of device.sensors">
+          <div *ngIf="sensor.isActive" class="activeSignal"></div>
+          <div *ngIf="!sensor.isActive" class="inactiveSignal"></div>
+          <img src="{{ sensor.imageSrc }}" alt="" />
+          <p class="sensorTitle">{{ sensor.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

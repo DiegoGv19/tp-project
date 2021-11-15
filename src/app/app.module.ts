@@ -11,11 +11,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
-import {MatGridList, MatGridListModule} from '@angular/material/grid-list';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatGridList, MatGridListModule } from '@angular/material/grid-list';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
 import { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';
 import { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';
 import { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';
@@ -26,6 +27,25 @@ import { DialogSavedComponent } from './Pages/dialog-saved/dialog-saved.componen
 import { DialogProfileComponent } from './Pages/dialog-profile/dialog-profile.component';
 import { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';
 import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';
+import { FishFarmDetailsComponent } from './components/admin/fish-farm-details/fish-farm-details.component';
+import { RemoveFishFarmComponent } from './components/admin/remove-fish-farm/remove-fish-farm.component';
+
+export const AngularMaterialModules = {
+  imports: [
+    MatGridListModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatCardModule,
+    MatIconModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatMenuModule,
+  ],
+  exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,22 +62,16 @@ import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main
     DialogProfileComponent,
     CompanySettingsComponent,
     MainRecoverPasswordComponent,
+    FishFarmDetailsComponent,
+    RemoveFishFarmComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatGridListModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    MatCardModule,
-    MatIconModule,
-    MatRadioModule,
-    MatDialogModule
+    ...AngularMaterialModules.imports,
   ],
-  exports: [MatButtonModule, MatFormFieldModule, MatInputModule],
+  exports: [...AngularMaterialModules.exports],
   providers: [],
   bootstrap: [AppComponent],
 })

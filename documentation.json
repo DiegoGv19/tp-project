@@ -1,0 +1,2024 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "FishFarm",
+            "id": "interface-FishFarm-b4673cc774d6d90e8c7045adab54072d",
+            "file": "src/app/Pages/display-fish-farms/fish-farm.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface FishFarm {\r\n    name: string;\r\n    date: string;\r\n\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "date",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 164,
+            "methods": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AdminComponent",
+            "id": "component-AdminComponent-e9bae4449902d8a43046be5e3f4a7ece",
+            "file": "src/app/Pages/admin/admin.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-admin",
+            "styleUrls": [
+                "./admin.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./admin.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-admin',\r\n  templateUrl: './admin.component.html',\r\n  styleUrls: ['./admin.component.scss']\r\n})\r\nexport class AdminComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./admin.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"adminContainer\"> \r\n    <div>\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-b53804897626b3e54b7db02e2f3ed29e",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'tp-proyect'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'tp-proyect';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<router-outlet></router-outlet>"
+        },
+        {
+            "name": "CompanySettingsComponent",
+            "id": "component-CompanySettingsComponent-e14827ceb7bf16e1116ab7d4df4d793c",
+            "file": "src/app/Pages/company-settings/company-settings.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-company-settings",
+            "styleUrls": [
+                "./company-settings.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./company-settings.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "uploadFileForm",
+                    "defaultValue": "new FormGroup({\r\n    fileName:new FormControl(null)\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "upload",
+                    "args": [
+                        {
+                            "name": "file",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "file",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { FormControl, FormGroup } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-company-settings',\r\n  templateUrl: './company-settings.component.html',\r\n  styleUrls: ['./company-settings.component.scss']\r\n})\r\nexport class CompanySettingsComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n  uploadFileForm= new FormGroup({\r\n    fileName:new FormControl(null)\r\n  })\r\n\r\n  upload(file:any){\r\n    console.log(file)\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./company-settings.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class>\r\n    <mat-card class=\"card-list\">\r\n\r\n        <mat-card-header>\r\n            <mat-card-title>Logo de la empresa(opcional)</mat-card-title>\r\n            <mat-icon aria-hidden=\"false\">delete</mat-icon>\r\n        </mat-card-header>\r\n\r\n        <mat-card-content>\r\n            <mat-grid-list cols=\"1\" rows=\"3\" rowHeight=\"100px\">\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <div (click)=\"uploadFile.click()\">\r\n                        <button mat-raised-button color=\"primary\">Elige una imagen para subir</button>\r\n                        <input #uploadFile (change)=\"upload($event)\" type='file' style=\"display:none\" />\r\n                    </div>\r\n                </mat-grid-tile>\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <h6>El tamaño de la imagen debe ser máximo 2mb y en formato svg ,png , jpg</h6>\r\n                </mat-grid-tile>\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <button mat-button color =\"primary\" >Guardar Cambios</button>\r\n                </mat-grid-tile>\r\n            </mat-grid-list>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>"
+        },
+        {
+            "name": "DialogProfileComponent",
+            "id": "component-DialogProfileComponent-c57ac1750175477562bca669df4d1de1",
+            "file": "src/app/Pages/dialog-profile/dialog-profile.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dialog-profile",
+            "styleUrls": [
+                "./dialog-profile.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dialog-profile.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-dialog-profile',\r\n  templateUrl: './dialog-profile.component.html',\r\n  styleUrls: ['./dialog-profile.component.scss']\r\n})\r\nexport class DialogProfileComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./dialog-profile.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button mat-button color =\"primary\" >Configuración</button>\r\n<button mat-button color =\"primary\" >Cerrar Sesión</button>"
+        },
+        {
+            "name": "DialogSavedComponent",
+            "id": "component-DialogSavedComponent-d89896c2b6b3bb65437768e47715ad69",
+            "file": "src/app/Pages/dialog-saved/dialog-saved.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dialog-saved",
+            "styleUrls": [
+                "./dialog-saved.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dialog-saved.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-dialog-saved',\r\n  templateUrl: './dialog-saved.component.html',\r\n  styleUrls: ['./dialog-saved.component.scss']\r\n})\r\nexport class DialogSavedComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"./../../../tokens.scss\";\r\n\r\n\r\n.saved-check{\r\n    font-size: 60px;\r\n    align-self: center;\r\n}\r\n\r\n.saved-dialog{\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 4rem;\r\n    max-width: $max-mobile-width;\r\n}",
+                    "styleUrl": "./dialog-saved.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"saved-dialog\">\r\n    <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\" class=\"saved-check\" layout-align=\"center center\">done\r\n    </mat-icon>\r\n    <h2>Los Cambios se han guardado correctamente</h2>\r\n</div>"
+        },
+        {
+            "name": "DisplayFishFarmsComponent",
+            "id": "component-DisplayFishFarmsComponent-aeacea6ac39901617c32dd9672136d69",
+            "file": "src/app/Pages/display-fish-farms/display-fish-farms.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-display-fish-farms",
+            "styleUrls": [
+                "./display-fish-farms.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./display-fish-farms.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "farmList",
+                    "defaultValue": "[\r\n    {\r\n      date: \"2018-09-09\",\r\n      name: \"Granja\"\r\n    },\r\n    {\r\n      date: \"2018-09-09\",\r\n      name: \"Granja\"\r\n    },\r\n    {\r\n      date: \"2018-09-09\",\r\n      name: \"Granja\"\r\n    },\r\n    {\r\n      date: \"2018-09-09\",\r\n      name: \"Granja\"\r\n    },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FishFarm[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { FishFarm } from './fish-farm';\r\n@Component({\r\n  selector: 'app-display-fish-farms',\r\n  templateUrl: './display-fish-farms.component.html',\r\n  styleUrls: ['./display-fish-farms.component.scss']\r\n})\r\nexport class DisplayFishFarmsComponent implements OnInit {\r\n\r\n  farmList: FishFarm[] = [\r\n    {\r\n      date: \"2018-09-09\",\r\n      name: \"Granja\"\r\n    },\r\n    {\r\n      date: \"2018-09-09\",\r\n      name: \"Granja\"\r\n    },\r\n    {\r\n      date: \"2018-09-09\",\r\n      name: \"Granja\"\r\n    },\r\n    {\r\n      date: \"2018-09-09\",\r\n      name: \"Granja\"\r\n    },\r\n  ]\r\n\r\n  constructor() {\r\n\r\n\r\n  }\r\n\r\n  ngOnInit(): void {\r\n\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"./../../../tokens.scss\";\r\n\r\n.fish-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 4rem;\r\n  width: 20rem;\r\n  max-width: $max-mobile-width;\r\n  max-height: $max-mobile-height;\r\n}\r\n\r\n.card-list {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-style: solid;\r\n    border-width: medium;\r\n    gap: 1rem;\r\n}\r\n\r\n.card-element {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-style: solid;\r\n    border-width: medium;\r\n    gap: 4rem;\r\n}\r\n\r\n.custom-td{\r\n    padding: 0 1.5rem;\r\n}\r\n",
+                    "styleUrl": "./display-fish-farms.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 27
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-grid-list cols=\"6\" rowHeight=\"30px\">\r\n    <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n        <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">add_task</mat-icon>\r\n    </mat-grid-tile>\r\n    <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n        <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">settings</mat-icon>\r\n    </mat-grid-tile>\r\n</mat-grid-list>\r\n<div class=\"fish-list\">\r\n    <mat-card class=\"card-list\">\r\n\r\n        <mat-card-header>\r\n            <mat-card-title>Piscigranjas</mat-card-title>\r\n        </mat-card-header>\r\n\r\n        <mat-card-content>\r\n            <table>\r\n                <tr>\r\n                    <td class=\"custom-td\">Nombre de Piscigranjas</td>\r\n                    <td class=\"custom-td\">Ultima vez mala calidad de agua</td>\r\n                </tr>\r\n            </table>\r\n            <mat-list class=\"list\">\r\n                <mat-card class=\"card-element\" *ngFor=\"let farm of farmList\">\r\n                    <tr>\r\n                        <td class=\"custom-td\"> {{farm.name}}</td>\r\n                        <td class=\"custom-td\"> {{farm.date}}</td>\r\n                    </tr>\r\n                </mat-card>\r\n            </mat-list>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>"
+        },
+        {
+            "name": "DoorSettingsComponent",
+            "id": "component-DoorSettingsComponent-916eeae08eb70107a7be6937cd5cc163",
+            "file": "src/app/Pages/door-settings/door-settings.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-door-settings",
+            "styleUrls": [
+                "./door-settings.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./door-settings.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openDialog",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "xxx",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { DialogSavedComponent } from '../dialog-saved/dialog-saved.component';\r\n\r\n@Component({\r\n  selector: 'app-door-settings',\r\n  templateUrl: './door-settings.component.html',\r\n  styleUrls: ['./door-settings.component.scss']\r\n})\r\nexport class DoorSettingsComponent implements OnInit {\r\n\r\n  constructor(public dialog: MatDialog) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  xxx(){\r\n    console.log()\r\n  }\r\n  openDialog() {\r\n    const dialogRef = this.dialog.open(DialogSavedComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./door-settings.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-grid-list cols=\"6\" rowHeight=\"30px\">\r\n    <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n        <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">arrow_circle_left</mat-icon>\r\n    </mat-grid-tile>\r\n</mat-grid-list>\r\n<div class>\r\n    <mat-card class=\"card-list\">\r\n\r\n        <mat-card-header>\r\n            <mat-card-title>Configuración de compuertas general</mat-card-title>\r\n        </mat-card-header>\r\n\r\n        <mat-card-content>\r\n            <mat-grid-list cols=\"1\" rows=\"3\" rowHeight=\"100px\">\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <mat-radio-group aria-label=\"Select an option\">\r\n                        <mat-radio-button value=\"1\">automatica</mat-radio-button>\r\n                        <mat-radio-button value=\"2\">manual</mat-radio-button>\r\n                    </mat-radio-group>\r\n                </mat-grid-tile>\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <mat-label>Tiempo que iniciaran en abrirse</mat-label>\r\n                    <mat-form-field>\r\n                        <input type=\"number\" class=\"form-control\" matInput name=\"value\" placeholder=\"Tiempo en minutos\"\r\n                            (change)=\"xxx()\" formControlName=\"value\">\r\n                    </mat-form-field>\r\n                </mat-grid-tile>\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <h5>El tiempo minimo es 0 minutos y el máximo es 30 minutos</h5>\r\n                </mat-grid-tile>\r\n\r\n                \r\n            </mat-grid-list>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>"
+        },
+        {
+            "name": "EmailSentComponent",
+            "id": "component-EmailSentComponent-7bc3661cb9ea874110af3ea79a705960",
+            "file": "src/app/Pages/recover-password/email-sent/email-sent.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-email-sent",
+            "styleUrls": [
+                "./email-sent.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./email-sent.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-email-sent',\r\n  templateUrl: './email-sent.component.html',\r\n  styleUrls: ['./email-sent.component.scss'],\r\n})\r\nexport class EmailSentComponent implements OnInit {\r\n  constructor(private router: Router) {}\r\n\r\n  ngOnInit(): void {}\r\n  onSubmit(event: Event) {\r\n    event.preventDefault();\r\n    this.router.navigateByUrl('/');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"./../../../../tokens.scss\";\r\n\r\n.emailSentContainer {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  grid-template-areas: \"logo form\";\r\n  width: 100vw;\r\n  height: 100vh;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    width: auto;\r\n    height: auto;\r\n    grid-template-areas: \"form\";\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.emailSentHeroLogo {\r\n  grid-area: logo;\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.emailSent {\r\n  grid-area: form;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n  max-width: $max-mobile-width;\r\n  padding: 2rem 1rem 2rem 4rem;\r\n  justify-content: center;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    padding: 2rem 1rem;\r\n  }\r\n}\r\n\r\n.emailSentForm {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n}\r\n\r\n.emailSentLogo {\r\n  height: 8rem;\r\n  object-fit: cover;\r\n}\r\n",
+                    "styleUrl": "./email-sent.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"emailSentContainer\">\r\n  <img\r\n    class=\"emailSentHeroLogo\"\r\n    src=\"assets/wide-logo.jpg\"\r\n    alt=\"wide-hero-logo\"\r\n  />\r\n\r\n  <div class=\"emailSent\">\r\n    <img class=\"emailSentLogo\" src=\"assets/wide-logo.jpg\" alt=\"wide-logo\" />\r\n    <h1>Correo electrónico enviado</h1>\r\n\r\n    <p>\r\n      Acabamos de enviar un correo electrónico con un enlace para que puedas\r\n      restablecer tu contraseña\r\n    </p>\r\n\r\n    <form class=\"emailSentForm\" (submit)=\"onSubmit($event)\">\r\n      <button mat-button color=\"primary\">Ir a iniciar sesión</button>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "FishFarmDetailsComponent",
+            "id": "component-FishFarmDetailsComponent-292fea6cff7c21df5920d8ca99cfae5d",
+            "file": "src/app/components/admin/fish-farm-details/fish-farm-details.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-fish-farm-details",
+            "styleUrls": [
+                "./fish-farm-details.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./fish-farm-details.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "deviceData",
+                    "defaultValue": "[\r\n    {\r\n      title: 'Sensores de temperatura',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device Y',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Sensores de pH',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Sensores de oxígeno disuelto',\r\n      sensors: [\r\n        {\r\n          isActive: false,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device Y',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Compuertas',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n      ],\r\n    },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Devices",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 73,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\ntype Devices = {\r\n  title: string;\r\n  sensors: {\r\n    isActive: boolean;\r\n    imageSrc: string;\r\n    title: string;\r\n  }[];\r\n}[];\r\n\r\n@Component({\r\n  selector: 'app-fish-farm-details',\r\n  templateUrl: './fish-farm-details.component.html',\r\n  styleUrls: ['./fish-farm-details.component.scss'],\r\n})\r\nexport class FishFarmDetailsComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  deviceData: Devices = [\r\n    {\r\n      title: 'Sensores de temperatura',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device Y',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Sensores de pH',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Sensores de oxígeno disuelto',\r\n      sensors: [\r\n        {\r\n          isActive: false,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device Y',\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Compuertas',\r\n      sensors: [\r\n        {\r\n          isActive: true,\r\n          imageSrc: 'assets/image-frame.png',\r\n          title: 'Device X',\r\n        },\r\n      ],\r\n    },\r\n  ];\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".sensorContainer {\r\n  display: flex;\r\n  gap: 1rem;\r\n  flex-direction: column;\r\n  & p {\r\n    margin: 0;\r\n  }\r\n}\r\n\r\n.iotDevices {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 2rem;\r\n}\r\n\r\n.sensorContainerMonitor {\r\n  display: flex;\r\n  gap: 1rem;\r\n  overflow: auto;\r\n}\r\n\r\n.infoTable {\r\n  min-width: 16rem;\r\n  & p {\r\n    padding: 0;\r\n    margin: 0.5rem 0;\r\n    text-align: left;\r\n  }\r\n}\r\n\r\n.sensor {\r\n  position: relative;\r\n  margin-right: 2rem;\r\n  & .activeSignal {\r\n    position: absolute;\r\n    right: -1rem;\r\n    top: 0.4rem;\r\n    display: flex;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    background-color: green;\r\n    border-radius: 50%;\r\n  }\r\n  & .inactiveSignal {\r\n    position: absolute;\r\n    right: -1rem;\r\n    top: 0.4rem;\r\n    display: flex;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    background-color: red;\r\n    border-radius: 50%;\r\n  }\r\n  & .sensorTitle {\r\n    text-align: center;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./fish-farm-details.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 17
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-card>\r\n  <mat-card-title>Piscigranja de reproductores</mat-card-title>\r\n\r\n  <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n    <mat-icon>more_vert</mat-icon>\r\n  </button>\r\n  <mat-menu #menu=\"matMenu\">\r\n    <button mat-menu-item>\r\n      <span>Ver historial de mala calidad</span>\r\n    </button>\r\n    <button mat-menu-item>\r\n      <span>Editar</span>\r\n    </button>\r\n    <button mat-menu-item>\r\n      <span>Eliminar</span>\r\n    </button>\r\n  </mat-menu>\r\n\r\n  <table class=\"infoTable\">\r\n    <tr>\r\n      <th>\r\n        <p>Últimos parámetros</p>\r\n      </th>\r\n      <th>\r\n        <p>Nivel</p>\r\n      </th>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>Temperatura</p>\r\n      </td>\r\n      <td>22 ºC</td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>pH</p>\r\n      </td>\r\n      <td>6,5</td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>Oxígeno Disuelto</p>\r\n      </td>\r\n      <td>10.1 mg/L</td>\r\n    </tr>\r\n  </table>\r\n\r\n  <div class=\"iotDevices\">\r\n    <h3>Dispositivos IoT</h3>\r\n\r\n    <div class=\"sensorContainer\" *ngFor=\"let device of deviceData\">\r\n      <p>{{ device.title }}</p>\r\n      <div class=\"sensorContainerMonitor\">\r\n        <div class=\"sensor\" *ngFor=\"let sensor of device.sensors\">\r\n          <div *ngIf=\"sensor.isActive\" class=\"activeSignal\"></div>\r\n          <div *ngIf=\"!sensor.isActive\" class=\"inactiveSignal\"></div>\r\n          <img src=\"{{ sensor.imageSrc }}\" alt=\"\" />\r\n          <p class=\"sensorTitle\">{{ sensor.title }}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</mat-card>\r\n"
+        },
+        {
+            "name": "LoginComponent",
+            "id": "component-LoginComponent-00776e8171dfd32ee644ba864d7ce074",
+            "file": "src/app/Pages/login/login.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-login",
+            "styleUrls": [
+                "./login.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./login.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.scss'],\r\n})\r\nexport class LoginComponent implements OnInit {\r\n  constructor(private router: Router) {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  onSubmit(event: Event) {\r\n    event.preventDefault();\r\n    this.router.navigateByUrl('/admin');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"./../../../tokens.scss\";\r\n\r\n.loginContainer {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  grid-template-areas: \"logo form\";\r\n  width: 100vw;\r\n  height: 100vh;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    width: auto;\r\n    height: auto;\r\n    grid-template-areas: \"form\";\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.loginHeroLogo {\r\n  grid-area: logo;\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.login {\r\n  grid-area: form;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n  max-width: $max-mobile-width;\r\n  padding: 2rem 1rem 2rem 4rem;\r\n  justify-content: center;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    padding: 2rem 1rem;\r\n  }\r\n}\r\n\r\n.loginForm {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n}\r\n\r\n.loginOptions {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.loginLogo {\r\n  height: 8rem;\r\n  object-fit: cover;\r\n}\r\n",
+                    "styleUrl": "./login.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"loginContainer\">\r\n  <img class=\"loginHeroLogo\" src=\"assets/wide-logo.jpg\" alt=\"wide-hero-logo\" />\r\n\r\n  <div class=\"login\">\r\n    <img class=\"loginLogo\" src=\"assets/wide-logo.jpg\" alt=\"wide-logo\" />\r\n    <h1>Inicia sesión</h1>\r\n\r\n    <p>\r\n      Inicia sesión con tu usuario o correo electrónico y contraseña brindados\r\n      por nosotros\r\n    </p>\r\n\r\n    <form class=\"loginForm\" (submit)=\"onSubmit($event)\">\r\n      <mat-form-field appearance=\"fill\">\r\n        <mat-label>Nombre de usuario o correo electrónico</mat-label>\r\n        <input type=\"email\" matInput placeholder=\"Ex. user@example.com\" />\r\n      </mat-form-field>\r\n\r\n      <mat-form-field appearance=\"fill\">\r\n        <mat-label>Contraseña</mat-label>\r\n        <input type=\"password\" matInput id=\"password\" />\r\n      </mat-form-field>\r\n\r\n      <button mat-button color=\"primary\">Entrar</button>\r\n\r\n      <div class=\"loginOptions\">\r\n        <label for=\"remember-me\">\r\n          <input type=\"checkbox\" id=\"remember-me\" />\r\n          Recuérdame\r\n        </label>\r\n\r\n        <a href=\"/recover-password\">Olvidé mi contraseña</a>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "MainComponent",
+            "id": "component-MainComponent-d8ec3cc8e9c06cf3da0c9acaba06374c",
+            "file": "src/app/Pages/main/main.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-main",
+            "styleUrls": [
+                "./main.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./main.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openDialog",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { DialogProfileComponent } from '../dialog-profile/dialog-profile.component';\r\n\r\n@Component({\r\n  selector: 'app-main',\r\n  templateUrl: './main.component.html',\r\n  styleUrls: ['./main.component.scss']\r\n})\r\nexport class MainComponent implements OnInit {\r\n\r\n\r\n  constructor(public dialog:MatDialog) { }\r\n\r\n  ngOnInit(): void {\r\n    \r\n  }\r\n\r\n  openDialog() {\r\n    const dialogRef = this.dialog.open(DialogProfileComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"./../../../tokens.scss\";\r\n.mainLogo {\r\n  height: 4rem;\r\n  width: 14rem;\r\n  object-fit: cover;\r\n}\r\n\r\n.main {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n}\r\n\r\n.table-main {\r\n    width: 13rem;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n}\r\n",
+                    "styleUrl": "./main.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"main\">\r\n    <mat-grid-list cols=\"4\" rowHeight=\"100px\">\r\n        <mat-grid-tile mat-grid-tile [colspan]=\"3\">\r\n            <img class=\"mainLogo\" src=\"assets/wide-logo.jpg\" alt=\"wide-logo\" />\r\n        </mat-grid-tile>\r\n        <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n            <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\" (click)=\"openDialog()\" >account_box</mat-icon>\r\n        </mat-grid-tile>\r\n    </mat-grid-list>\r\n    <router-outlet></router-outlet>\r\n</div>\r\n"
+        },
+        {
+            "name": "MainRecoverPasswordComponent",
+            "id": "component-MainRecoverPasswordComponent-d250215c2f48814e0fad388f96e12c30",
+            "file": "src/app/Pages/main-recover-password/main-recover-password.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-main-recover-password",
+            "styleUrls": [
+                "./main-recover-password.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./main-recover-password.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-main-recover-password',\r\n  templateUrl: './main-recover-password.component.html',\r\n  styleUrls: ['./main-recover-password.component.scss']\r\n})\r\nexport class MainRecoverPasswordComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./main-recover-password.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div> \r\n    <div>\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>"
+        },
+        {
+            "name": "NewPasswordComponent",
+            "id": "component-NewPasswordComponent-9bc50271236e9572c44ff94a13a3fa5c",
+            "file": "src/app/Pages/recover-password/new-password/new-password.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-new-password",
+            "styleUrls": [
+                "./new-password.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./new-password.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-new-password',\r\n  templateUrl: './new-password.component.html',\r\n  styleUrls: ['./new-password.component.scss'],\r\n})\r\nexport class NewPasswordComponent implements OnInit {\r\n  constructor(private router: Router) {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  onSubmit(event: Event) {\r\n    event.preventDefault();\r\n    this.router.navigateByUrl('/recover-password/recovered');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"./../../../../tokens.scss\";\r\n\r\n.newPasswordContainer {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  grid-template-areas: \"logo form\";\r\n  width: 100vw;\r\n  height: 100vh;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    width: auto;\r\n    height: auto;\r\n    grid-template-areas: \"form\";\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.newPasswordHeroLogo {\r\n  grid-area: logo;\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.newPassword {\r\n  grid-area: form;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n  max-width: $max-mobile-width;\r\n  padding: 2rem 1rem 2rem 4rem;\r\n  justify-content: center;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    padding: 2rem 1rem;\r\n  }\r\n}\r\n\r\n.newPasswordForm {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n}\r\n\r\n.newPasswordLogo {\r\n  height: 8rem;\r\n  object-fit: cover;\r\n}\r\n",
+                    "styleUrl": "./new-password.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"newPasswordContainer\">\r\n  <img\r\n    class=\"newPasswordHeroLogo\"\r\n    src=\"assets/wide-logo.jpg\"\r\n    alt=\"wide-hero-logo\"\r\n  />\r\n\r\n  <div class=\"newPassword\">\r\n    <img class=\"newPasswordLogo\" src=\"assets/wide-logo.jpg\" alt=\"wide-logo\" />\r\n    <h1>Reestablecer contraseña</h1>\r\n\r\n    <form class=\"newPasswordForm\" (submit)=\"onSubmit($event)\">\r\n      <mat-form-field appearance=\"fill\">\r\n        <mat-label>Nueva contraseña</mat-label>\r\n        <input type=\"password\" matInput />\r\n      </mat-form-field>\r\n\r\n      <mat-form-field appearance=\"fill\">\r\n        <mat-label>Confirma tu contraseña</mat-label>\r\n        <input type=\"password\" matInput />\r\n      </mat-form-field>\r\n\r\n      <button mat-button color=\"primary\">Reestablecer contraseña</button>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "RecoveredMessageComponent",
+            "id": "component-RecoveredMessageComponent-69fdccc68201fa0797892f91edcfce03",
+            "file": "src/app/Pages/recover-password/recovered-message/recovered-message.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-recovered-message",
+            "styleUrls": [
+                "./recovered-message.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./recovered-message.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-recovered-message',\r\n  templateUrl: './recovered-message.component.html',\r\n  styleUrls: ['./recovered-message.component.scss'],\r\n})\r\nexport class RecoveredMessageComponent implements OnInit {\r\n  constructor(private router: Router) {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  onSubmit(event: Event) {\r\n    event.preventDefault();\r\n    this.router.navigateByUrl('/login');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"./../../../../tokens.scss\";\r\n\r\n.recoveredPasswordContainer {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  grid-template-areas: \"logo form\";\r\n  width: 100vw;\r\n  height: 100vh;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    width: auto;\r\n    height: auto;\r\n    grid-template-areas: \"form\";\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.recoveredPasswordHeroLogo {\r\n  grid-area: logo;\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.recoveredPassword {\r\n  grid-area: form;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n  max-width: $max-mobile-width;\r\n  padding: 2rem 1rem 2rem 4rem;\r\n  justify-content: center;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    padding: 2rem 1rem;\r\n  }\r\n}\r\n\r\n.recoveredPasswordForm {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n}\r\n\r\n.recoveredPasswordLogo {\r\n  height: 8rem;\r\n  object-fit: cover;\r\n}\r\n",
+                    "styleUrl": "./recovered-message.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"recoveredPasswordContainer\">\r\n  <img\r\n    class=\"recoveredPasswordHeroLogo\"\r\n    src=\"assets/wide-logo.jpg\"\r\n    alt=\"wide-hero-logo\"\r\n  />\r\n\r\n  <div class=\"recoveredPassword\">\r\n    <img\r\n      class=\"recoveredPasswordLogo\"\r\n      src=\"assets/wide-logo.jpg\"\r\n      alt=\"wide-logo\"\r\n    />\r\n    <h1>Contraseña reestablecida</h1>\r\n\r\n    <form class=\"recoveredPasswordForm\" (submit)=\"onSubmit($event)\">\r\n      <button mat-button color=\"primary\">Ir a iniciar sesión</button>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "RecoverPasswordComponent",
+            "id": "component-RecoverPasswordComponent-53b5e0160c38c8cc0c31d930e57fd538",
+            "file": "src/app/Pages/recover-password/recover-password.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-recover-password",
+            "styleUrls": [
+                "./recover-password.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./recover-password.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-recover-password',\r\n  templateUrl: './recover-password.component.html',\r\n  styleUrls: ['./recover-password.component.scss'],\r\n})\r\nexport class RecoverPasswordComponent implements OnInit {\r\n  constructor(private router: Router) {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  onSubmit(event: Event) {\r\n    event.preventDefault();\r\n    this.router.navigateByUrl('/recover-password/email-sent');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"./../../../tokens.scss\";\r\n\r\n.recoverPasswordContainer {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  grid-template-areas: \"logo form\";\r\n  width: 100vw;\r\n  height: 100vh;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    width: auto;\r\n    height: auto;\r\n    grid-template-areas: \"form\";\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.recoverPasswordHeroLogo {\r\n  grid-area: logo;\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.recoverPassword {\r\n  grid-area: form;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n  max-width: $max-mobile-width;\r\n  padding: 2rem 1rem 2rem 4rem;\r\n  justify-content: center;\r\n  @media screen and (max-width: $max-tablet-width) {\r\n    padding: 2rem 1rem;\r\n  }\r\n}\r\n\r\n.recoverPasswordForm {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n}\r\n\r\n.recoverPasswordLogo {\r\n  height: 8rem;\r\n  object-fit: cover;\r\n}\r\n",
+                    "styleUrl": "./recover-password.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"recoverPasswordContainer\">\r\n  <img\r\n    class=\"recoverPasswordHeroLogo\"\r\n    src=\"assets/wide-logo.jpg\"\r\n    alt=\"wide-hero-logo\"\r\n  />\r\n\r\n  <div class=\"recoverPassword\">\r\n    <img\r\n      class=\"recoverPasswordLogo\"\r\n      src=\"assets/wide-logo.jpg\"\r\n      alt=\"wide-logo\"\r\n    />\r\n    <h1>Reestablecer contraseña</h1>\r\n\r\n    <p>\r\n      Ingresa tu correo electrónico para enviarte un enlace con el que puedas\r\n      restablecer tu contraseña\r\n    </p>\r\n\r\n    <form class=\"recoverPasswordForm\" (submit)=\"onSubmit($event)\">\r\n      <mat-form-field appearance=\"fill\">\r\n        <mat-label>Correo electrónico</mat-label>\r\n        <input type=\"email\" matInput placeholder=\"Ex. user@example.com\" />\r\n      </mat-form-field>\r\n\r\n      <button mat-button color=\"primary\">Enviar</button>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "RemoveFishFarmComponent",
+            "id": "component-RemoveFishFarmComponent-5b787f26819f97dc686384c5be37d137",
+            "file": "src/app/components/admin/remove-fish-farm/remove-fish-farm.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-remove-fish-farm",
+            "styleUrls": [
+                "./remove-fish-farm.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./remove-fish-farm.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-remove-fish-farm',\n  templateUrl: './remove-fish-farm.component.html',\n  styleUrls: ['./remove-fish-farm.component.scss']\n})\nexport class RemoveFishFarmComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./remove-fish-farm.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>remove-fish-farm works!</p>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-cb18f275c6afbebe5b04e51fd33b1b02",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './Pages/login/login.component';\r\nimport { AdminComponent } from './Pages/admin/admin.component';\r\nimport { MainComponent } from './Pages/main/main.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatListModule } from '@angular/material/list';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatMenuModule } from '@angular/material/menu';\r\nimport { MatGridList, MatGridListModule } from '@angular/material/grid-list';\r\nimport { MatRadioModule } from '@angular/material/radio';\r\nimport { MatDialogModule } from '@angular/material/dialog';\r\nimport { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';\r\nimport { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';\r\nimport { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';\r\nimport { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';\r\nimport { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';\r\nimport { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';\r\nimport { DialogSavedComponent } from './Pages/dialog-saved/dialog-saved.component';\r\nimport { DialogProfileComponent } from './Pages/dialog-profile/dialog-profile.component';\r\nimport { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';\r\nimport { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';\r\nimport { FishFarmDetailsComponent } from './components/admin/fish-farm-details/fish-farm-details.component';\nimport { RemoveFishFarmComponent } from './components/admin/remove-fish-farm/remove-fish-farm.component';\r\n\r\nexport const AngularMaterialModules = {\r\n  imports: [\r\n    MatGridListModule,\r\n    MatButtonModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatListModule,\r\n    MatCardModule,\r\n    MatIconModule,\r\n    MatRadioModule,\r\n    MatDialogModule,\r\n    MatMenuModule,\r\n  ],\r\n  exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],\r\n};\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    LoginComponent,\r\n    AdminComponent,\r\n    MainComponent,\r\n    RecoverPasswordComponent,\r\n    EmailSentComponent,\r\n    NewPasswordComponent,\r\n    RecoveredMessageComponent,\r\n    DisplayFishFarmsComponent,\r\n    DoorSettingsComponent,\r\n    DialogSavedComponent,\r\n    DialogProfileComponent,\r\n    CompanySettingsComponent,\r\n    MainRecoverPasswordComponent,\r\n    FishFarmDetailsComponent,\r\n    RemoveFishFarmComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    BrowserAnimationsModule,\r\n    ...AngularMaterialModules.imports,\r\n  ],\r\n  exports: [...AngularMaterialModules.exports],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AdminComponent"
+                        },
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "CompanySettingsComponent"
+                        },
+                        {
+                            "name": "DialogProfileComponent"
+                        },
+                        {
+                            "name": "DialogSavedComponent"
+                        },
+                        {
+                            "name": "DisplayFishFarmsComponent"
+                        },
+                        {
+                            "name": "DoorSettingsComponent"
+                        },
+                        {
+                            "name": "EmailSentComponent"
+                        },
+                        {
+                            "name": "FishFarmDetailsComponent"
+                        },
+                        {
+                            "name": "LoginComponent"
+                        },
+                        {
+                            "name": "MainComponent"
+                        },
+                        {
+                            "name": "MainRecoverPasswordComponent"
+                        },
+                        {
+                            "name": "NewPasswordComponent"
+                        },
+                        {
+                            "name": "RecoverPasswordComponent"
+                        },
+                        {
+                            "name": "RecoveredMessageComponent"
+                        },
+                        {
+                            "name": "RemoveFishFarmComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": ""
+                        },
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-60295deb05f588b770beb1b86c667363",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { AdminComponent } from './Pages/admin/admin.component';\r\nimport { LoginComponent } from './Pages/login/login.component';\r\nimport { MainComponent } from './Pages/main/main.component';\r\nimport { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';\r\nimport { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';\r\nimport { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';\r\nimport { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';\r\nimport { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';\r\nimport { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';\r\nimport { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';\r\nimport { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: 'login',\r\n    component: LoginComponent,\r\n  },\r\n  /*Iglesia y Moleche: En mi local no se refleja el responsive de ninguna de las vistas*/\r\n  {\r\n    path: 'recover-password',\r\n    component: MainRecoverPasswordComponent,\r\n    children: [\r\n      {\r\n        path: '',\r\n        component: RecoverPasswordComponent,\r\n      },\r\n      {\r\n        path: 'email-sent',\r\n        component: EmailSentComponent,\r\n      },\r\n      {\r\n        path: 'new-password',\r\n        component: NewPasswordComponent,\r\n      },\r\n      {\r\n        path: 'recovered',\r\n        component: RecoveredMessageComponent,\r\n      },\r\n    ]\r\n  },\r\n  {\r\n    path: 'admin',\r\n    component: AdminComponent,\r\n    children: [\r\n      {\r\n        path: '',\r\n        component: MainComponent,\r\n        children: [\r\n          {\r\n            path: '',\r\n            component: DisplayFishFarmsComponent,\r\n          },\r\n          {\r\n            path: 'settings',\r\n            component: DoorSettingsComponent,\r\n          },\r\n          {\r\n            path: 'company',\r\n            component: CompanySettingsComponent,\r\n          },\r\n        ],\r\n      },\r\n    ],\r\n  },\r\n  \r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule],\r\n})\r\nexport class AppRoutingModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "AngularMaterialModules",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  imports: [\r\n    MatGridListModule,\r\n    MatButtonModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatListModule,\r\n    MatCardModule,\r\n    MatIconModule,\r\n    MatRadioModule,\r\n    MatDialogModule,\r\n    MatMenuModule,\r\n  ],\r\n  exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],\r\n}"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  props: {\r\n    label: 'FishFarmDetailsComponent',\r\n  },\r\n})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/admin/remove-fish-farm/remove-fish-farm.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  props: {\r\n    label: 'RemoveFishFarmComponent',\r\n  },\r\n})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "Devices",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "literal type[]",
+                "file": "src/app/components/admin/fish-farm-details/fish-farm-details.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 181
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.module.ts": [
+                {
+                    "name": "AngularMaterialModules",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  imports: [\r\n    MatGridListModule,\r\n    MatButtonModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatListModule,\r\n    MatCardModule,\r\n    MatIconModule,\r\n    MatRadioModule,\r\n    MatDialogModule,\r\n    MatMenuModule,\r\n  ],\r\n  exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],\r\n}"
+                }
+            ],
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  props: {\r\n    label: 'FishFarmDetailsComponent',\r\n  },\r\n})"
+                }
+            ],
+            "src/app/components/admin/remove-fish-farm/remove-fish-farm.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/admin/remove-fish-farm/remove-fish-farm.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  props: {\r\n    label: 'RemoveFishFarmComponent',\r\n  },\r\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "src/app/components/admin/fish-farm-details/fish-farm-details.component.ts": [
+                {
+                    "name": "Devices",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "literal type[]",
+                    "file": "src/app/components/admin/fish-farm-details/fish-farm-details.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 181
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "login",
+                        "component": "LoginComponent"
+                    },
+                    {
+                        "path": "recover-password",
+                        "component": "MainRecoverPasswordComponent",
+                        "children": [
+                            {
+                                "path": "",
+                                "component": "RecoverPasswordComponent"
+                            },
+                            {
+                                "path": "email-sent",
+                                "component": "EmailSentComponent"
+                            },
+                            {
+                                "path": "new-password",
+                                "component": "NewPasswordComponent"
+                            },
+                            {
+                                "path": "recovered",
+                                "component": "RecoveredMessageComponent"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "admin",
+                        "component": "AdminComponent",
+                        "children": [
+                            {
+                                "path": "",
+                                "component": "MainComponent",
+                                "children": [
+                                    {
+                                        "path": "",
+                                        "component": "DisplayFishFarmsComponent"
+                                    },
+                                    {
+                                        "path": "settings",
+                                        "component": "DoorSettingsComponent"
+                                    },
+                                    {
+                                        "path": "company",
+                                        "component": "CompanySettingsComponent"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/Pages/admin/admin.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AdminComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/company-settings/company-settings.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CompanySettingsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/dialog-profile/dialog-profile.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DialogProfileComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/dialog-saved/dialog-saved.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DialogSavedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/display-fish-farms/display-fish-farms.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DisplayFishFarmsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/display-fish-farms/fish-farm.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FishFarm",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/door-settings/door-settings.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DoorSettingsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/login/login.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoginComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/main-recover-password/main-recover-password.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainRecoverPasswordComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/main/main.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/recover-password/email-sent/email-sent.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EmailSentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/recover-password/new-password/new-password.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NewPasswordComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/recover-password/recover-password.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RecoverPasswordComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/recover-password/recovered-message/recovered-message.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RecoveredMessageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AngularMaterialModules",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/admin/fish-farm-details/fish-farm-details.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FishFarmDetailsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/admin/remove-fish-farm/remove-fish-farm.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RemoveFishFarmComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/admin/remove-fish-farm/remove-fish-farm.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
