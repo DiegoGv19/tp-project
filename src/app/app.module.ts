@@ -45,6 +45,11 @@ export const AngularMaterialModules = {
   ],
   exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],
 };
+import { DeviceDetailComponent } from './Pages/device-detail/device-detail.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { DialogDeviceMoreComponent } from './Pages/dialog-device-more/dialog-device-more.component';
+import { DialogDeviceUninstallComponent } from './Pages/dialog-device-uninstall/dialog-device-uninstall.component';
+import { DeviceAddComponent } from './Pages/device-add/device-add.component';
 
 @NgModule({
   declarations: [
@@ -64,12 +69,26 @@ export const AngularMaterialModules = {
     MainRecoverPasswordComponent,
     FishFarmDetailsComponent,
     RemoveFishFarmComponent,
+    DeviceDetailComponent,
+    DialogDeviceMoreComponent,
+    DialogDeviceUninstallComponent,
+    DeviceAddComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ...AngularMaterialModules.imports,
+    MatGridListModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatCardModule,
+    MatIconModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   exports: [...AngularMaterialModules.exports],
   providers: [],

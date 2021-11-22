@@ -11,6 +11,8 @@ import { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fi
 import { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';
 import { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';
 import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';
+import { DeviceDetailComponent } from './Pages/device-detail/device-detail.component';
+import { DeviceAddComponent } from './Pages/device-add/device-add.component';
 
 const routes: Routes = [
   {
@@ -40,6 +42,7 @@ const routes: Routes = [
       },
     ]
   },
+
   {
     path: 'admin',
     component: AdminComponent,
@@ -51,6 +54,14 @@ const routes: Routes = [
           {
             path: '',
             component: DisplayFishFarmsComponent,
+          },
+          {
+            path: 'device',
+            component: DeviceDetailComponent,
+          },
+          {
+            path: 'add',
+            component: DeviceAddComponent,
           },
           {
             path: 'settings',
