@@ -50,6 +50,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { DialogDeviceMoreComponent } from './Pages/dialog-device-more/dialog-device-more.component';
 import { DialogDeviceUninstallComponent } from './Pages/dialog-device-uninstall/dialog-device-uninstall.component';
 import { DeviceAddComponent } from './Pages/device-add/device-add.component';
+import { AddFishFarmComponent } from './Pages/add-fish-farm/add-fish-farm.component';
+import { AddFishFarmConfigurationComponent } from './Pages/add-fish-farm-configuration/add-fish-farm-configuration.component';
+import { FishFarmEditComponent } from './Pages/fish-farm-edit/fish-farm-edit.component';
+import { FishFarmEditConfigurationComponent } from './Pages/fish-farm-edit-configuration/fish-farm-edit-configuration.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +77,10 @@ import { DeviceAddComponent } from './Pages/device-add/device-add.component';
     DialogDeviceMoreComponent,
     DialogDeviceUninstallComponent,
     DeviceAddComponent,
+    AddFishFarmComponent,
+    AddFishFarmConfigurationComponent,
+    FishFarmEditComponent,
+    FishFarmEditConfigurationComponent,
   ],
   imports: [
     BrowserModule,
