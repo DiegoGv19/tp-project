@@ -1,0 +1,35 @@
+<div class="device-card">
+    <mat-icon  class="back-button" aria-hidden="false" aria-label="Example home icon">arrow_circle_left</mat-icon>
+    <div class=detail>
+        <h3>Sensor</h3>
+               
+
+                <mat-icon class=options-icon aria-hidden="false" aria-label="Example home icon" (click)="dialogMore()">
+                    more_vert</mat-icon>
+ 
+        <h3>Datos del dispositivo</h3>
+        <form class="deviceForm" (submit)="onSubmit($event)">
+            <mat-form-field  appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input type="rexr" matInput placeholder="Nombre del sensor" value="Sensor 1" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Descripcion</mat-label>
+                <textarea class="description-area" type="rexr" matInput placeholder="Nombre del sensor"
+                    value="Sensor 1"></textarea>
+            </mat-form-field>
+            <button class="input-picture" type="button" mat-raised-button color="primary"
+                (click)="uploadFile.click()">Elige una imagen para
+                subir</button>
+            <input #uploadFile (change)="upload(uploadFile.files)" type='file' style="display:none" accept='image/*' />
+            <img [src]="imgURL" height="200" *ngIf="imgURL">
+            <mat-slide-toggle>Conectado</mat-slide-toggle>
+            <mat-form-field appearance="fill">
+                <mat-label>Codigo</mat-label>
+                <input type="rexr" matInput placeholder="Codigo" value="HA42SD46" />
+            </mat-form-field>
+            <button type="button" mat-button color="secondary" (click)="save()">Cambiar Datos de conexión</button>
+            <button mat-button color="primary">Guardar Cambios</button>
+        </form>
+    </div>
+</div>

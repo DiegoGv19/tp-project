@@ -1,0 +1,47 @@
+<div class="device-card">
+    <div class="detail">
+        <h3>Sensor</h3>
+        <mat-grid-list cols="6" rowHeight="30px">
+            <mat-grid-tile mat-grid-tile [colspan]="1">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_circle_left</mat-icon>
+            </mat-grid-tile>
+        </mat-grid-list>
+    
+        <h3>Nueva piscigranja</h3>
+       
+        <form class="deviceForm" (submit)="onSubmit($event)">
+            <h2>Sensores de temperatura</h2>
+            <mat-form-field appearance="fill">
+                <mat-label>Rango minimo óptimo</mat-label>
+                <input type="rexr" matInput placeholder="Nombre"/>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Rango máximo optimo</mat-label>
+                <input type="rexr" matInput placeholder="Nombre del sensor"/>
+            </mat-form-field>
+            <button type="button" mat-button color="secondary" (click)="save()">Añadir sensor</button>
+            <h2>Sensores de pH</h2>
+            <mat-form-field appearance="fill">
+                <mat-label>Rango minimo óptimo</mat-label>
+                <input type="rexr" matInput placeholder="Nombre"/>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Rango máximo optimo</mat-label>
+                <input type="rexr" matInput placeholder="Nombre del sensor"/>
+            </mat-form-field>
+            <button type="button" mat-button color="secondary" (click)="save()">Añadir sensor</button>
+            <h2>Sensores de oxigeno disuelto</h2>
+            <mat-form-field appearance="fill">
+                <mat-label>Rango minimo óptimo</mat-label>
+                <input type="rexr" matInput placeholder="Nombre"/>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Rango máximo optimo</mat-label>
+                <input type="rexr" matInput placeholder="Nombre del sensor"/>
+            </mat-form-field>
+            <button type="button" mat-button color="secondary" (click)="save()">Añadir sensor</button>
+            <button mat-button color="primary">Guardar configuracion</button>
+        </form>
+        
+    </div>
+    </div>

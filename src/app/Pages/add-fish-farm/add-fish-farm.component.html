@@ -1,0 +1,30 @@
+<div class="device-card">
+    <div class="detail">
+        <h3>Sensor</h3>
+        <mat-grid-list cols="6" rowHeight="30px">
+            <mat-grid-tile mat-grid-tile [colspan]="1">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_circle_left</mat-icon>
+            </mat-grid-tile>
+        </mat-grid-list>
+    
+        <h3>Nueva piscigranja</h3>
+        <h2>Datos de la piscigranja</h2>
+        <form class="deviceForm" (submit)="onSubmit($event)">
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input type="rexr" matInput placeholder="Nombre"/>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Descripcion</mat-label>
+                <textarea class="description-area" type="rexr" matInput placeholder="Nombre del sensor"
+                    ></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Tipo de Pez(Opcional)</mat-label>
+                <input type="rexr" matInput placeholder="Nombre del sensor"/>
+            </mat-form-field>
+            <button type="button" mat-button color="secondary" (click)="save()">Guardar sin configuracion</button>
+            <button mat-button color="primary">Guardar con configuracion</button>
+        </form>
+    </div>
+    </div>

@@ -11,6 +11,12 @@ import { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fi
 import { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';
 import { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';
 import { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';
+import { DeviceDetailComponent } from './Pages/device-detail/device-detail.component';
+import { DeviceAddComponent } from './Pages/device-add/device-add.component';
+import { AddFishFarmComponent } from './Pages/add-fish-farm/add-fish-farm.component';
+import { AddFishFarmConfigurationComponent } from './Pages/add-fish-farm-configuration/add-fish-farm-configuration.component';
+import { FishFarmEditComponent } from './Pages/fish-farm-edit/fish-farm-edit.component';
+import { FishFarmEditConfigurationComponent } from './Pages/fish-farm-edit-configuration/fish-farm-edit-configuration.component';
 
 const routes: Routes = [
   {
@@ -40,6 +46,7 @@ const routes: Routes = [
       },
     ]
   },
+
   {
     path: 'admin',
     component: AdminComponent,
@@ -51,6 +58,36 @@ const routes: Routes = [
           {
             path: '',
             component: DisplayFishFarmsComponent,
+          },
+          {
+            path: 'device',
+            component: DeviceDetailComponent,
+          },
+          {
+            path: 'fishfarm',
+            component: AddFishFarmComponent,
+            children: [
+              {
+                path: 'configuration',
+                component: AddFishFarmConfigurationComponent,
+              },
+            ]
+          },
+          {
+            path: 'configuration',
+            component: AddFishFarmConfigurationComponent,
+          },
+          {
+            path: 'edit',
+            component: FishFarmEditComponent,
+          },
+          {
+            path: 'edit-config',
+            component: FishFarmEditConfigurationComponent,
+          },
+          {
+            path: 'add',
+            component: DeviceAddComponent,
           },
           {
             path: 'settings',

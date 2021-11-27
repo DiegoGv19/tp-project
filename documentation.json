@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "DialogData",
-            "id": "interface-DialogData-74d45eec2a38e05b97193d8e0eac55be",
+            "id": "interface-DialogData-4e34d197c381ec6c2c9b9e627f0f7498",
             "file": "src/app/components/admin/remove-fish-farm/remove-fish-farm.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Inject } from '@angular/core';\nimport {\n  MatDialog,\n  MatDialogRef,\n  MAT_DIALOG_DATA,\n} from '@angular/material/dialog';\n\nexport interface DialogData {\n  animal: string;\n  name: string;\n}\n\n@Component({\n  selector: 'dialog-overview-example-dialog',\n  // templateUrl: 'dialog-overview-example-dialog.html',\n  template: `\n    <h1 mat-dialog-title>Hi {{ data.name }}</h1>\n    <div mat-dialog-content>\n      <p>What's your favorite animal?</p>\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Favorite Animal</mat-label>\n        <input matInput [(ngModel)]=\"data.animal\" />\n      </mat-form-field>\n    </div>\n    <div mat-dialog-actions>\n      <button mat-button (click)=\"onNoClick()\">No Thanks</button>\n      <button mat-button [mat-dialog-close]=\"data.animal\" cdkFocusInitial>\n        Ok\n      </button>\n    </div>\n  `,\n})\nexport class DialogOverviewExampleDialog {\n  constructor(\n    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,\n    @Inject(MAT_DIALOG_DATA) public data: DialogData\n  ) {}\n\n  onNoClick(): void {\n    this.dialogRef.close();\n  }\n}\n\n@Component({\n  selector: 'app-remove-fish-farm',\n  templateUrl: './remove-fish-farm.component.html',\n  styleUrls: ['./remove-fish-farm.component.scss'],\n})\nexport class RemoveFishFarmComponent {\n  animal: string = '';\n  name: string = '';\n\n  constructor(public dialog: MatDialog) {}\n\n  openDialog(): void {\n    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {\n      width: '250px',\n      data: { name: this.name, animal: this.animal },\n    });\n\n    dialogRef.afterClosed().subscribe((result) => {\n      console.log('The dialog was closed');\n      this.animal = result;\n    });\n  }\n}\n",
+            "sourceCode": "import { Component, Inject, OnInit } from '@angular/core';\r\nimport {\r\n  MatDialog,\r\n  MatDialogRef,\r\n  MAT_DIALOG_DATA,\r\n} from '@angular/material/dialog';\r\n\r\nexport interface DialogData {\r\n  animal: string;\r\n  name: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'dialog-overview-example-dialog',\r\n  // templateUrl: 'dialog-overview-example-dialog.html',\r\n  template: `\r\n    <h1 mat-dialog-title>Hi {{ data.name }}</h1>\r\n    <div mat-dialog-content>\r\n      <p>What's your favorite animal?</p>\r\n      <mat-form-field appearance=\"fill\">\r\n        <mat-label>Favorite Animal</mat-label>\r\n        <input matInput [(ngModel)]=\"data.animal\" />\r\n      </mat-form-field>\r\n    </div>\r\n    <div mat-dialog-actions>\r\n      <button mat-button (click)=\"onNoClick()\">No Thanks</button>\r\n      <button mat-button [mat-dialog-close]=\"data.animal\" cdkFocusInitial>\r\n        Ok\r\n      </button>\r\n    </div>\r\n  `,\r\n})\r\nexport class DialogOverviewExampleDialog {\r\n  constructor(\r\n    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,\r\n    @Inject(MAT_DIALOG_DATA) public data: DialogData\r\n  ) {}\r\n\r\n  onNoClick(): void {\r\n    this.dialogRef.close();\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: 'app-remove-fish-farm',\r\n  templateUrl: './remove-fish-farm.component.html',\r\n  styleUrls: ['./remove-fish-farm.component.scss'],\r\n})\r\nexport class RemoveFishFarmComponent {\r\n  animal: string = '';\r\n  name: string = '';\r\n\r\n  constructor(public dialog: MatDialog) {}\r\n\r\n  openDialog(): void {\r\n    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {\r\n      width: '250px',\r\n      data: { name: this.name, animal: this.animal },\r\n    });\r\n\r\n    dialogRef.afterClosed().subscribe((result) => {\r\n      console.log('The dialog was closed');\r\n      this.animal = result;\r\n    });\r\n  }\r\n}\r\n",
             "properties": [
                 {
                     "name": "animal",
@@ -73,8 +73,270 @@
     "directives": [],
     "components": [
         {
+            "name": "AddFishFarmComponent",
+            "id": "component-AddFishFarmComponent-66bb4fde67994359fa5b06af38facca7",
+            "file": "src/app/Pages/add-fish-farm/add-fish-farm.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-add-fish-farm",
+            "styleUrls": [
+                "./add-fish-farm.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./add-fish-farm.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "save",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { DialogSavedComponent } from '../dialog-saved/dialog-saved.component';\r\n\r\n@Component({\r\n  selector: 'app-add-fish-farm',\r\n  templateUrl: './add-fish-farm.component.html',\r\n  styleUrls: ['./add-fish-farm.component.scss']\r\n})\r\nexport class AddFishFarmComponent implements OnInit {\r\n\r\n  constructor(public dialog: MatDialog) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(event: Event) {\r\n    const dialogRef = this.dialog.open(DialogSavedComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n  save()\r\n  {\r\n\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n  @import \"./../../../tokens.scss\";\r\n\r\n\r\n  .options-icon  {\r\n      position: absolute;\r\n      left: 60%;\r\n    }\r\n  \r\n  \r\n  \r\n  .device-card {\r\n      display: flex;\r\n      flex-direction: column;\r\n      gap: 4rem;\r\n      width: 80%;\r\n      height: 100vh;\r\n      margin: 10px;\r\n      align-self: center;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        max-width: $max-mobile-width;\r\n      }\r\n  @media screen and (max-width: $max-mobile-width) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n  }\r\n  \r\n  .back-button{\r\n  float: left;\r\n  }\r\n  }\r\n  .detail{\r\n      display: flex;\r\n      flex-direction: column;\r\n      align-self: center;\r\n      width: 420px;\r\n      gap: 1rem;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          display: flex;\r\n          flex-direction: column;\r\n          gap: 1rem;\r\n          width: 300px;\r\n          max-width: $max-mobile-width;\r\n  \r\n        }\r\n  }\r\n  \r\n  \r\n  \r\n  .mat-form-field {\r\n      width: 400px;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          width: 330px;\r\n        }\r\n    }\r\n  .description-area\r\n  {\r\n      height: 100px;\r\n  }\r\n  .textarea{\r\n      height: 100px;\r\n    }\r\n  \r\n  .input-picture{\r\n      align-self: center;\r\n  }\r\n  .green-icon {\r\n      color: greenyellow;\r\n      align-content:end;\r\n  }",
+                    "styleUrl": "./add-fish-farm.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"device-card\">\r\n    <div class=\"detail\">\r\n        <h3>Sensor</h3>\r\n        <mat-grid-list cols=\"6\" rowHeight=\"30px\">\r\n            <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">arrow_circle_left</mat-icon>\r\n            </mat-grid-tile>\r\n        </mat-grid-list>\r\n    \r\n        <h3>Nueva piscigranja</h3>\r\n        <h2>Datos de la piscigranja</h2>\r\n        <form class=\"deviceForm\" (submit)=\"onSubmit($event)\">\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nombre</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre\"/>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descripcion</mat-label>\r\n                <textarea class=\"description-area\" type=\"rexr\" matInput placeholder=\"Nombre del sensor\"\r\n                    ></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Tipo de Pez(Opcional)</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\"/>\r\n            </mat-form-field>\r\n            <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Guardar sin configuracion</button>\r\n            <button mat-button color=\"primary\">Guardar con configuracion</button>\r\n        </form>\r\n    </div>\r\n    </div>"
+        },
+        {
+            "name": "AddFishFarmConfigurationComponent",
+            "id": "component-AddFishFarmConfigurationComponent-d56f5d8f99e3f73697eba628fb3e98d8",
+            "file": "src/app/Pages/add-fish-farm-configuration/add-fish-farm-configuration.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-add-fish-farm-configuration",
+            "styleUrls": [
+                "./add-fish-farm-configuration.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./add-fish-farm-configuration.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "save",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { DialogSavedComponent } from '../dialog-saved/dialog-saved.component';\r\n\r\n@Component({\r\n  selector: 'app-add-fish-farm-configuration',\r\n  templateUrl: './add-fish-farm-configuration.component.html',\r\n  styleUrls: ['./add-fish-farm-configuration.component.scss']\r\n})\r\nexport class AddFishFarmConfigurationComponent implements OnInit {\r\n\r\n  constructor(public dialog: MatDialog) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(event: Event) {\r\n    const dialogRef = this.dialog.open(DialogSavedComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n  save()\r\n  {\r\n\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n  @import \"./../../../tokens.scss\";\r\n\r\n\r\n  .options-icon  {\r\n      position: absolute;\r\n      left: 60%;\r\n    }\r\n  \r\n  \r\n  \r\n  .device-card {\r\n      display: flex;\r\n      flex-direction: column;\r\n      gap: 4rem;\r\n      width: 80%;\r\n      height: 100vh;\r\n      margin: 10px;\r\n      align-self: center;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        max-width: $max-mobile-width;\r\n      }\r\n  @media screen and (max-width: $max-mobile-width) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n  }\r\n  \r\n  .back-button{\r\n  float: left;\r\n  }\r\n  }\r\n  .detail{\r\n      display: flex;\r\n      flex-direction: column;\r\n      align-self: center;\r\n      width: 420px;\r\n      gap: 1rem;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          display: flex;\r\n          flex-direction: column;\r\n          gap: 1rem;\r\n          width: 300px;\r\n          max-width: $max-mobile-width;\r\n  \r\n        }\r\n  }\r\n  \r\n  \r\n  \r\n  .mat-form-field {\r\n      width: 400px;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          width: 330px;\r\n        }\r\n    }\r\n  .description-area\r\n  {\r\n      height: 100px;\r\n  }\r\n  .textarea{\r\n      height: 100px;\r\n    }\r\n  \r\n  .input-picture{\r\n      align-self: center;\r\n  }\r\n  .green-icon {\r\n      color: greenyellow;\r\n      align-content:end;\r\n  }",
+                    "styleUrl": "./add-fish-farm-configuration.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"device-card\">\r\n    <div class=\"detail\">\r\n        <h3>Sensor</h3>\r\n        <mat-grid-list cols=\"6\" rowHeight=\"30px\">\r\n            <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">arrow_circle_left</mat-icon>\r\n            </mat-grid-tile>\r\n        </mat-grid-list>\r\n    \r\n        <h3>Nueva piscigranja</h3>\r\n       \r\n        <form class=\"deviceForm\" (submit)=\"onSubmit($event)\">\r\n            <h2>Sensores de temperatura</h2>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango minimo óptimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre\"/>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango máximo optimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\"/>\r\n            </mat-form-field>\r\n            <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Añadir sensor</button>\r\n            <h2>Sensores de pH</h2>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango minimo óptimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre\"/>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango máximo optimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\"/>\r\n            </mat-form-field>\r\n            <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Añadir sensor</button>\r\n            <h2>Sensores de oxigeno disuelto</h2>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango minimo óptimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre\"/>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango máximo optimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\"/>\r\n            </mat-form-field>\r\n            <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Añadir sensor</button>\r\n            <button mat-button color=\"primary\">Guardar configuracion</button>\r\n        </form>\r\n        \r\n    </div>\r\n    </div>"
+        },
+        {
             "name": "AdminComponent",
-            "id": "component-AdminComponent-e9bae4449902d8a43046be5e3f4a7ece",
+            "id": "component-AdminComponent-2027dd13b73fd375c5d2432e38a89f1c",
             "file": "src/app/Pages/admin/admin.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -112,7 +374,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-admin',\r\n  templateUrl: './admin.component.html',\r\n  styleUrls: ['./admin.component.scss']\r\n})\r\nexport class AdminComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-admin',\r\n  templateUrl: './admin.component.html',\r\n  styleUrls: ['./admin.component.scss']\r\n})\r\nexport class AdminComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  \r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -268,7 +530,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "@import \"./../../../tokens.scss\";\r\n\r\n.company-settings {\r\n\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n  @media screen and (max-width: $max-mobile-width) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n  }\r\n\r\n\r\n}\r\n",
                     "styleUrl": "./company-settings.component.scss"
                 }
             ],
@@ -284,11 +546,566 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class>\r\n    <mat-card class=\"card-list\">\r\n\r\n        <mat-card-header>\r\n            <mat-card-title>Logo de la empresa(opcional)</mat-card-title>\r\n            <mat-icon aria-hidden=\"false\">delete</mat-icon>\r\n        </mat-card-header>\r\n\r\n        <mat-card-content>\r\n            <mat-grid-list cols=\"1\" rows=\"3\" rowHeight=\"100px\">\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <div (click)=\"uploadFile.click()\">\r\n                        <button mat-raised-button color=\"primary\">Elige una imagen para subir</button>\r\n                        <input #uploadFile (change)=\"upload($event)\" type='file' style=\"display:none\" />\r\n                    </div>\r\n                </mat-grid-tile>\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <h6>El tamaño de la imagen debe ser máximo 2mb y en formato svg ,png , jpg</h6>\r\n                </mat-grid-tile>\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <button mat-button color =\"primary\" >Guardar Cambios</button>\r\n                </mat-grid-tile>\r\n            </mat-grid-list>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>"
+            "templateData": "<div class=company-settings>\r\n    <mat-card class=\"card-list\">\r\n\r\n        <mat-card-header>\r\n            <mat-card-title>Logo de la empresa(opcional)</mat-card-title>\r\n            <mat-icon aria-hidden=\"false\">delete</mat-icon>\r\n        </mat-card-header>\r\n\r\n        <mat-card-content>\r\n            <mat-grid-list cols=\"1\" rows=\"3\" rowHeight=\"100px\">\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <div (click)=\"uploadFile.click()\">\r\n                        <button mat-raised-button color=\"primary\">Elige una imagen para subir</button>\r\n                        <input #uploadFile (change)=\"upload($event)\" type='file' style=\"display:none\" />\r\n                    </div>\r\n                </mat-grid-tile>\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <h6>El tamaño de la imagen debe ser máximo 2mb y en formato svg ,png , jpg</h6>\r\n                </mat-grid-tile>\r\n                <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                    <button mat-button color =\"primary\" >Guardar Cambios</button>\r\n                </mat-grid-tile>\r\n            </mat-grid-list>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>"
+        },
+        {
+            "name": "DeviceAddComponent",
+            "id": "component-DeviceAddComponent-de3d309b1f6b6b200b7e5477a9d8514a",
+            "file": "src/app/Pages/device-add/device-add.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-device-add",
+            "styleUrls": [
+                "./device-add.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./device-add.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "imagePath",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "imgURL",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "uploadFileForm",
+                    "defaultValue": "new FormGroup({\r\n    fileName:new FormControl(null)\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "save",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "upload",
+                    "args": [
+                        {
+                            "name": "files",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "files",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { FormControl, FormGroup } from '@angular/forms';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { DialogSavedComponent } from '../dialog-saved/dialog-saved.component';\r\n\r\n\r\n@Component({\r\n  selector: 'app-device-add',\r\n  templateUrl: './device-add.component.html',\r\n  styleUrls: ['./device-add.component.scss']\r\n})\r\nexport class DeviceAddComponent implements OnInit {\r\n\r\n  imgURL: any;\r\n  public imagePath: any;\r\n  constructor(public dialog: MatDialog) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(event: Event) {\r\n    const dialogRef = this.dialog.open(DialogSavedComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n  save()\r\n  {\r\n\r\n  }\r\n\r\n  uploadFileForm= new FormGroup({\r\n    fileName:new FormControl(null)\r\n  })\r\n\r\n  upload(files:any){\r\n    if (files.length === 0)\r\n    return;\r\n\r\n  var reader = new FileReader();\r\n  this.imagePath = files;\r\n  reader.readAsDataURL(files[0]); \r\n  reader.onload = (_event) => { \r\n    this.imgURL = reader.result; \r\n  }\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n  @import \"./../../../tokens.scss\";\r\n\r\n\r\n  .options-icon  {\r\n      position: absolute;\r\n      left: 60%;\r\n    }\r\n  \r\n  \r\n  \r\n  .device-card {\r\n      display: flex;\r\n      flex-direction: column;\r\n      gap: 4rem;\r\n      width: 80%;\r\n      height: 100vh;\r\n      margin: 10px;\r\n      align-self: center;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        max-width: $max-mobile-width;\r\n      }\r\n  @media screen and (max-width: $max-mobile-width) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n  }\r\n  \r\n  .back-button{\r\n  float: left;\r\n  }\r\n  }\r\n  .detail{\r\n      display: flex;\r\n      flex-direction: column;\r\n      align-self: center;\r\n      width: 420px;\r\n      gap: 1rem;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          display: flex;\r\n          flex-direction: column;\r\n          gap: 1rem;\r\n          width: 300px;\r\n          max-width: $max-mobile-width;\r\n  \r\n        }\r\n  }\r\n  \r\n  \r\n  \r\n  .mat-form-field {\r\n      width: 400px;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          width: 330px;\r\n        }\r\n    }\r\n  .description-area\r\n  {\r\n      height: 100px;\r\n  }\r\n  .textarea{\r\n      height: 100px;\r\n    }\r\n  \r\n  .input-picture{\r\n      align-self: center;\r\n  }\r\n  .green-icon {\r\n      color: greenyellow;\r\n      align-content:end;\r\n  }",
+                    "styleUrl": "./device-add.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"device-card\">\r\n<div class=\"detail\">\r\n    <h3>Sensor</h3>\r\n    <mat-grid-list cols=\"6\" rowHeight=\"30px\">\r\n        <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n            <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">arrow_circle_left</mat-icon>\r\n        </mat-grid-tile>\r\n    </mat-grid-list>\r\n\r\n    <h3>Datos del dispositivo</h3>\r\n    <form class=\"deviceForm\" (submit)=\"onSubmit($event)\">\r\n        <mat-form-field appearance=\"fill\">\r\n            <mat-label>Nombre</mat-label>\r\n            <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\"/>\r\n        </mat-form-field>\r\n        <mat-form-field appearance=\"fill\">\r\n            <mat-label>Descripcion</mat-label>\r\n            <textarea class=\"description-area\" type=\"rexr\" matInput placeholder=\"Nombre del sensor\"\r\n                ></textarea>\r\n        </mat-form-field>\r\n        <button class=\"input-picture\" type=\"button\" mat-raised-button color=\"primary\" (click)=\"uploadFile.click()\">Elige una imagen para\r\n            subir</button>\r\n        <input #uploadFile (change)=\"upload(uploadFile.files)\" type='file' style=\"display:none\" accept='image/*' />\r\n        <img [src]=\"imgURL\" height=\"200\" *ngIf=\"imgURL\">\r\n        <mat-slide-toggle >Conectado</mat-slide-toggle>\r\n        <mat-form-field appearance=\"fill\">\r\n            <mat-label>Codigo</mat-label>\r\n            <input type=\"rexr\" matInput placeholder=\"Codigo\"/>\r\n        </mat-form-field>\r\n        <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Establecer conexión</button>\r\n        <button mat-button color=\"primary\">Guardar Cambios</button>\r\n    </form>\r\n</div>\r\n</div>"
+        },
+        {
+            "name": "DeviceDetailComponent",
+            "id": "component-DeviceDetailComponent-33c411e72cefb7c6611be5606964517c",
+            "file": "src/app/Pages/device-detail/device-detail.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-device-detail",
+            "styleUrls": [
+                "./device-detail.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./device-detail.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "imagePath",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "imgURL",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "uploadFileForm",
+                    "defaultValue": "new FormGroup({\r\n    fileName:new FormControl(null)\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 39
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "dialogMore",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "save",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "upload",
+                    "args": [
+                        {
+                            "name": "files",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "files",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { FormControl, FormGroup } from '@angular/forms';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { DialogDeviceMoreComponent } from '../dialog-device-more/dialog-device-more.component';\r\nimport { DialogSavedComponent } from '../dialog-saved/dialog-saved.component';\r\n\r\n\r\n@Component({\r\n  selector: 'app-device-detail',\r\n  templateUrl: './device-detail.component.html',\r\n  styleUrls: ['./device-detail.component.scss']\r\n})\r\nexport class DeviceDetailComponent implements OnInit {\r\n\r\n  imgURL: any;\r\n  public imagePath: any;\r\n  constructor(public dialog: MatDialog) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(event: Event) {\r\n    const dialogRef = this.dialog.open(DialogSavedComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n\r\n  dialogMore() {\r\n    const dialogRef = this.dialog.open(DialogDeviceMoreComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n\r\n\r\n  uploadFileForm= new FormGroup({\r\n    fileName:new FormControl(null)\r\n  })\r\n  save()\r\n  {\r\n    \r\n  }\r\n  upload(files:any){\r\n    if (files.length === 0)\r\n    return;\r\n\r\n  var reader = new FileReader();\r\n  this.imagePath = files;\r\n  reader.readAsDataURL(files[0]); \r\n  reader.onload = (_event) => { \r\n    this.imgURL = reader.result; \r\n  }\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n  @import \"./../../../tokens.scss\";\r\n\r\n\r\n.options-icon  {\r\n    position: absolute;\r\n    left: 60%;\r\n  }\r\n\r\n\r\n\r\n.device-card {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 4rem;\r\n    width: 80%;\r\n    height: 100vh;\r\n    margin: 10px;\r\n    align-self: center;\r\n    @media screen and (max-width: $max-mobile-width) {\r\n      display: flex;\r\n      flex-direction: column;\r\n      gap: 1rem;\r\n      max-width: $max-mobile-width;\r\n    }\r\n@media screen and (max-width: $max-mobile-width) {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n  max-width: $max-mobile-width;\r\n}\r\n\r\n.back-button{\r\nfloat: left;\r\n}\r\n}\r\n.detail{\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-self: center;\r\n    width: 420px;\r\n    gap: 1rem;\r\n    @media screen and (max-width: $max-mobile-width) {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        width: 300px;\r\n        max-width: $max-mobile-width;\r\n\r\n      }\r\n}\r\n\r\n\r\n\r\n.mat-form-field {\r\n    width: 400px;\r\n    @media screen and (max-width: $max-mobile-width) {\r\n        width: 330px;\r\n      }\r\n  }\r\n.description-area\r\n{\r\n    height: 100px;\r\n}\r\n.textarea{\r\n    height: 100px;\r\n  }\r\n\r\n.input-picture{\r\n    align-self: center;\r\n}\r\n.green-icon {\r\n    color: greenyellow;\r\n    align-content:end;\r\n}",
+                    "styleUrl": "./device-detail.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 16,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"device-card\">\r\n    <mat-icon  class=\"back-button\" aria-hidden=\"false\" aria-label=\"Example home icon\">arrow_circle_left</mat-icon>\r\n    <div class=detail>\r\n        <h3>Sensor</h3>\r\n               \r\n\r\n                <mat-icon class=options-icon aria-hidden=\"false\" aria-label=\"Example home icon\" (click)=\"dialogMore()\">\r\n                    more_vert</mat-icon>\r\n \r\n        <h3>Datos del dispositivo</h3>\r\n        <form class=\"deviceForm\" (submit)=\"onSubmit($event)\">\r\n            <mat-form-field  appearance=\"fill\">\r\n                <mat-label>Nombre</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\" value=\"Sensor 1\" />\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descripcion</mat-label>\r\n                <textarea class=\"description-area\" type=\"rexr\" matInput placeholder=\"Nombre del sensor\"\r\n                    value=\"Sensor 1\"></textarea>\r\n            </mat-form-field>\r\n            <button class=\"input-picture\" type=\"button\" mat-raised-button color=\"primary\"\r\n                (click)=\"uploadFile.click()\">Elige una imagen para\r\n                subir</button>\r\n            <input #uploadFile (change)=\"upload(uploadFile.files)\" type='file' style=\"display:none\" accept='image/*' />\r\n            <img [src]=\"imgURL\" height=\"200\" *ngIf=\"imgURL\">\r\n            <mat-slide-toggle>Conectado</mat-slide-toggle>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Codigo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Codigo\" value=\"HA42SD46\" />\r\n            </mat-form-field>\r\n            <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Cambiar Datos de conexión</button>\r\n            <button mat-button color=\"primary\">Guardar Cambios</button>\r\n        </form>\r\n    </div>\r\n</div>"
+        },
+        {
+            "name": "DialogDeviceMoreComponent",
+            "id": "component-DialogDeviceMoreComponent-f6f62d1046638b6b5d14502bcf4e22c4",
+            "file": "src/app/Pages/dialog-device-more/dialog-device-more.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dialog-device-more",
+            "styleUrls": [
+                "./dialog-device-more.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dialog-device-more.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "confirmation",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { DialogDeviceUninstallComponent } from '../dialog-device-uninstall/dialog-device-uninstall.component';\r\n\r\n@Component({\r\n  selector: 'app-dialog-device-more',\r\n  templateUrl: './dialog-device-more.component.html',\r\n  styleUrls: ['./dialog-device-more.component.scss']\r\n})\r\nexport class DialogDeviceMoreComponent implements OnInit {\r\n\r\n  constructor(public dialog: MatDialog) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  confirmation() {\r\n    const dialogRef = this.dialog.open(DialogDeviceUninstallComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./dialog-device-more.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button mat-button color =\"primary\" (click)=\"confirmation()\" >Desinstalar</button>"
+        },
+        {
+            "name": "DialogDeviceUninstallComponent",
+            "id": "component-DialogDeviceUninstallComponent-6402af6624697968f786ee96dd026c36",
+            "file": "src/app/Pages/dialog-device-uninstall/dialog-device-uninstall.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dialog-device-uninstall",
+            "styleUrls": [
+                "./dialog-device-uninstall.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dialog-device-uninstall.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-dialog-device-uninstall',\r\n  templateUrl: './dialog-device-uninstall.component.html',\r\n  styleUrls: ['./dialog-device-uninstall.component.scss']\r\n})\r\nexport class DialogDeviceUninstallComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./dialog-device-uninstall.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h2>Estás seguro de eliminar este dispositivo</h2>\r\n<h2>Sensor de temperatura</h2>\r\n<h6>\r\n    Este es el unico sensor de temporatura instalado en la Piscigranja 1,\r\n    si lo desinstalas, la piscigranja ya no medira la temperatura del agua\r\n</h6>\r\n<button mat-button color =\"primary\" >Volver</button>\r\n<button mat-button color =\"primary\" >Eliminar dispositivo</button>"
         },
         {
             "name": "DialogOverviewExampleDialog",
-            "id": "component-DialogOverviewExampleDialog-74d45eec2a38e05b97193d8e0eac55be",
+            "id": "component-DialogOverviewExampleDialog-4e34d197c381ec6c2c9b9e627f0f7498",
             "file": "src/app/components/admin/remove-fish-farm/remove-fish-farm.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -354,7 +1171,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Inject } from '@angular/core';\nimport {\n  MatDialog,\n  MatDialogRef,\n  MAT_DIALOG_DATA,\n} from '@angular/material/dialog';\n\nexport interface DialogData {\n  animal: string;\n  name: string;\n}\n\n@Component({\n  selector: 'dialog-overview-example-dialog',\n  // templateUrl: 'dialog-overview-example-dialog.html',\n  template: `\n    <h1 mat-dialog-title>Hi {{ data.name }}</h1>\n    <div mat-dialog-content>\n      <p>What's your favorite animal?</p>\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Favorite Animal</mat-label>\n        <input matInput [(ngModel)]=\"data.animal\" />\n      </mat-form-field>\n    </div>\n    <div mat-dialog-actions>\n      <button mat-button (click)=\"onNoClick()\">No Thanks</button>\n      <button mat-button [mat-dialog-close]=\"data.animal\" cdkFocusInitial>\n        Ok\n      </button>\n    </div>\n  `,\n})\nexport class DialogOverviewExampleDialog {\n  constructor(\n    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,\n    @Inject(MAT_DIALOG_DATA) public data: DialogData\n  ) {}\n\n  onNoClick(): void {\n    this.dialogRef.close();\n  }\n}\n\n@Component({\n  selector: 'app-remove-fish-farm',\n  templateUrl: './remove-fish-farm.component.html',\n  styleUrls: ['./remove-fish-farm.component.scss'],\n})\nexport class RemoveFishFarmComponent {\n  animal: string = '';\n  name: string = '';\n\n  constructor(public dialog: MatDialog) {}\n\n  openDialog(): void {\n    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {\n      width: '250px',\n      data: { name: this.name, animal: this.animal },\n    });\n\n    dialogRef.afterClosed().subscribe((result) => {\n      console.log('The dialog was closed');\n      this.animal = result;\n    });\n  }\n}\n",
+            "sourceCode": "import { Component, Inject, OnInit } from '@angular/core';\r\nimport {\r\n  MatDialog,\r\n  MatDialogRef,\r\n  MAT_DIALOG_DATA,\r\n} from '@angular/material/dialog';\r\n\r\nexport interface DialogData {\r\n  animal: string;\r\n  name: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'dialog-overview-example-dialog',\r\n  // templateUrl: 'dialog-overview-example-dialog.html',\r\n  template: `\r\n    <h1 mat-dialog-title>Hi {{ data.name }}</h1>\r\n    <div mat-dialog-content>\r\n      <p>What's your favorite animal?</p>\r\n      <mat-form-field appearance=\"fill\">\r\n        <mat-label>Favorite Animal</mat-label>\r\n        <input matInput [(ngModel)]=\"data.animal\" />\r\n      </mat-form-field>\r\n    </div>\r\n    <div mat-dialog-actions>\r\n      <button mat-button (click)=\"onNoClick()\">No Thanks</button>\r\n      <button mat-button [mat-dialog-close]=\"data.animal\" cdkFocusInitial>\r\n        Ok\r\n      </button>\r\n    </div>\r\n  `,\r\n})\r\nexport class DialogOverviewExampleDialog {\r\n  constructor(\r\n    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,\r\n    @Inject(MAT_DIALOG_DATA) public data: DialogData\r\n  ) {}\r\n\r\n  onNoClick(): void {\r\n    this.dialogRef.close();\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: 'app-remove-fish-farm',\r\n  templateUrl: './remove-fish-farm.component.html',\r\n  styleUrls: ['./remove-fish-farm.component.scss'],\r\n})\r\nexport class RemoveFishFarmComponent {\r\n  animal: string = '';\r\n  name: string = '';\r\n\r\n  constructor(public dialog: MatDialog) {}\r\n\r\n  openDialog(): void {\r\n    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {\r\n      width: '250px',\r\n      data: { name: this.name, animal: this.animal },\r\n    });\r\n\r\n    dialogRef.afterClosed().subscribe((result) => {\r\n      console.log('The dialog was closed');\r\n      this.animal = result;\r\n    });\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -579,7 +1396,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"./../../../tokens.scss\";\r\n\r\n.fish-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 4rem;\r\n  width: 20rem;\r\n  max-width: $max-mobile-width;\r\n  max-height: $max-mobile-height;\r\n}\r\n\r\n.card-list {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-style: solid;\r\n    border-width: medium;\r\n    gap: 1rem;\r\n}\r\n\r\n.card-element {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-style: solid;\r\n    border-width: medium;\r\n    gap: 4rem;\r\n}\r\n\r\n.custom-td{\r\n    padding: 0 1.5rem;\r\n}\r\n",
+                    "data": "@import \"./../../../tokens.scss\";\r\n\r\n.fish-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 4rem;\r\n  width: 100vw;\r\n  height: 100vh;\r\n\r\n  @media screen and (max-width: $max-mobile-width) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n  }\r\n}\r\n\r\n.card-list {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-style: solid;\r\n    border-width: medium;\r\n    align-self: center;\r\n    width: 70%;\r\n    gap: 1rem;\r\n}\r\n\r\n.card-element {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-style: solid;\r\n    border-width: medium;\r\n    gap: 4rem;\r\n}\r\n\r\n.custom-td{\r\n    padding: 0 1.5rem;\r\n}\r\n",
                     "styleUrl": "./display-fish-farms.component.scss"
                 }
             ],
@@ -595,7 +1412,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-grid-list cols=\"6\" rowHeight=\"30px\">\r\n    <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n        <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">add_task</mat-icon>\r\n    </mat-grid-tile>\r\n    <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n        <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">settings</mat-icon>\r\n    </mat-grid-tile>\r\n</mat-grid-list>\r\n<div class=\"fish-list\">\r\n    <mat-card class=\"card-list\">\r\n\r\n        <mat-card-header>\r\n            <mat-card-title>Piscigranjas</mat-card-title>\r\n        </mat-card-header>\r\n\r\n        <mat-card-content>\r\n            <table>\r\n                <tr>\r\n                    <td class=\"custom-td\">Nombre de Piscigranjas</td>\r\n                    <td class=\"custom-td\">Ultima vez mala calidad de agua</td>\r\n                </tr>\r\n            </table>\r\n            <mat-list class=\"list\">\r\n                <mat-card class=\"card-element\" *ngFor=\"let farm of farmList\">\r\n                    <tr>\r\n                        <td class=\"custom-td\"> {{farm.name}}</td>\r\n                        <td class=\"custom-td\"> {{farm.date}}</td>\r\n                    </tr>\r\n                </mat-card>\r\n            </mat-list>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>"
+            "templateData": "\r\n<div class=\"fish-list\">\r\n\r\n    <mat-card class=\"card-list\">\r\n        <mat-grid-list cols=\"6\" rowHeight=\"30px\">\r\n            <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">add_task</mat-icon>\r\n            </mat-grid-tile>\r\n            <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">settings</mat-icon>\r\n            </mat-grid-tile>\r\n        </mat-grid-list>\r\n        <mat-card-header>\r\n            <mat-card-title>Piscigranjas</mat-card-title>\r\n        </mat-card-header>\r\n\r\n        <mat-card-content>\r\n            <table>\r\n                <tr>\r\n                    <td class=\"custom-td\">Nombre de Piscigranjas</td>\r\n                    <td class=\"custom-td\">Ultima vez mala calidad de agua</td>\r\n                </tr>\r\n            </table>\r\n            <mat-list class=\"list\">\r\n                <mat-card class=\"card-element\" *ngFor=\"let farm of farmList\">\r\n                    <tr>\r\n                        <td class=\"custom-td\"> {{farm.name}}</td>\r\n                        <td class=\"custom-td\"> {{farm.date}}</td>\r\n                    </tr>\r\n                </mat-card>\r\n            </mat-list>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>"
         },
         {
             "name": "DoorSettingsComponent",
@@ -892,6 +1709,268 @@
             "templateData": "<mat-card>\r\n  <mat-card-title>Piscigranja de reproductores</mat-card-title>\r\n\r\n  <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n    <mat-icon>more_vert</mat-icon>\r\n  </button>\r\n  <mat-menu #menu=\"matMenu\">\r\n    <button mat-menu-item>\r\n      <span>Ver historial de mala calidad</span>\r\n    </button>\r\n    <button mat-menu-item>\r\n      <span>Editar</span>\r\n    </button>\r\n    <button mat-menu-item>\r\n      <span>Eliminar</span>\r\n    </button>\r\n  </mat-menu>\r\n\r\n  <table class=\"infoTable\">\r\n    <tr>\r\n      <th>\r\n        <p>Últimos parámetros</p>\r\n      </th>\r\n      <th>\r\n        <p>Nivel</p>\r\n      </th>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>Temperatura</p>\r\n      </td>\r\n      <td>22 ºC</td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>pH</p>\r\n      </td>\r\n      <td>6,5</td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        <p>Oxígeno Disuelto</p>\r\n      </td>\r\n      <td>10.1 mg/L</td>\r\n    </tr>\r\n  </table>\r\n\r\n  <div class=\"iotDevices\">\r\n    <h3>Dispositivos IoT</h3>\r\n\r\n    <div class=\"sensorContainer\" *ngFor=\"let device of deviceData\">\r\n      <p>{{ device.title }}</p>\r\n      <div class=\"sensorContainerMonitor\">\r\n        <div class=\"sensor\" *ngFor=\"let sensor of device.sensors\">\r\n          <div *ngIf=\"sensor.isActive\" class=\"activeSignal\"></div>\r\n          <div *ngIf=\"!sensor.isActive\" class=\"inactiveSignal\"></div>\r\n          <img src=\"{{ sensor.imageSrc }}\" alt=\"\" />\r\n          <p class=\"sensorTitle\">{{ sensor.title }}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</mat-card>\r\n"
         },
         {
+            "name": "FishFarmEditComponent",
+            "id": "component-FishFarmEditComponent-e15e0d99ade3aa925e113e9cb14e53b2",
+            "file": "src/app/Pages/fish-farm-edit/fish-farm-edit.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-fish-farm-edit",
+            "styleUrls": [
+                "./fish-farm-edit.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./fish-farm-edit.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "save",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { DialogSavedComponent } from '../dialog-saved/dialog-saved.component';\r\n\r\n@Component({\r\n  selector: 'app-fish-farm-edit',\r\n  templateUrl: './fish-farm-edit.component.html',\r\n  styleUrls: ['./fish-farm-edit.component.scss']\r\n})\r\nexport class FishFarmEditComponent implements OnInit {\r\n\r\n  constructor(public dialog: MatDialog) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(event: Event) {\r\n    const dialogRef = this.dialog.open(DialogSavedComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n  save()\r\n  {\r\n\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n  @import \"./../../../tokens.scss\";\r\n\r\n\r\n  .options-icon  {\r\n      position: absolute;\r\n      left: 60%;\r\n    }\r\n  \r\n  \r\n  \r\n  .device-card {\r\n      display: flex;\r\n      flex-direction: column;\r\n      gap: 4rem;\r\n      width: 80%;\r\n      height: 100vh;\r\n      margin: 10px;\r\n      align-self: center;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        max-width: $max-mobile-width;\r\n      }\r\n  @media screen and (max-width: $max-mobile-width) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n  }\r\n  \r\n  .back-button{\r\n  float: left;\r\n  }\r\n  }\r\n  .detail{\r\n      display: flex;\r\n      flex-direction: column;\r\n      align-self: center;\r\n      width: 420px;\r\n      gap: 1rem;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          display: flex;\r\n          flex-direction: column;\r\n          gap: 1rem;\r\n          width: 300px;\r\n          max-width: $max-mobile-width;\r\n  \r\n        }\r\n  }\r\n  \r\n  \r\n  \r\n  .mat-form-field {\r\n      width: 400px;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          width: 330px;\r\n        }\r\n    }\r\n  .description-area\r\n  {\r\n      height: 100px;\r\n  }\r\n  .textarea{\r\n      height: 100px;\r\n    }\r\n  \r\n  .input-picture{\r\n      align-self: center;\r\n  }\r\n  .green-icon {\r\n      color: greenyellow;\r\n      align-content:end;\r\n  }",
+                    "styleUrl": "./fish-farm-edit.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"device-card\">\r\n    <div class=\"detail\">\r\n        <h3>Sensor</h3>\r\n        <mat-grid-list cols=\"6\" rowHeight=\"30px\">\r\n            <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">arrow_circle_left</mat-icon>\r\n            </mat-grid-tile>\r\n        </mat-grid-list>\r\n    \r\n        <h3>Nueva piscigranja</h3>\r\n        <h2>Datos de la piscigranja</h2>\r\n        <form class=\"deviceForm\" (submit)=\"onSubmit($event)\">\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nombre</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre\"/>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descripcion</mat-label>\r\n                <textarea class=\"description-area\" type=\"rexr\" matInput placeholder=\"Nombre del sensor\"\r\n                    ></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Tipo de Pez(Opcional)</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\"/>\r\n            </mat-form-field>\r\n            <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Guardar sin configuracion</button>\r\n            <button mat-button color=\"primary\">Guardar con configuracion</button>\r\n        </form>\r\n    </div>\r\n    </div>"
+        },
+        {
+            "name": "FishFarmEditConfigurationComponent",
+            "id": "component-FishFarmEditConfigurationComponent-26f7310bced68cfa7ef257f177defda2",
+            "file": "src/app/Pages/fish-farm-edit-configuration/fish-farm-edit-configuration.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-fish-farm-edit-configuration",
+            "styleUrls": [
+                "./fish-farm-edit-configuration.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./fish-farm-edit-configuration.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dialog",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatDialog",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "save",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { MatDialog } from '@angular/material/dialog';\r\nimport { DialogSavedComponent } from '../dialog-saved/dialog-saved.component';\r\n\r\n@Component({\r\n  selector: 'app-fish-farm-edit-configuration',\r\n  templateUrl: './fish-farm-edit-configuration.component.html',\r\n  styleUrls: ['./fish-farm-edit-configuration.component.scss']\r\n})\r\nexport class FishFarmEditConfigurationComponent implements OnInit {\r\n\r\n  constructor(public dialog: MatDialog) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(event: Event) {\r\n    const dialogRef = this.dialog.open(DialogSavedComponent);\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      console.log(`Dialog result: ${result}`);\r\n    });\r\n  }\r\n  save()\r\n  {\r\n\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n  @import \"./../../../tokens.scss\";\r\n\r\n\r\n  .options-icon  {\r\n      position: absolute;\r\n      left: 60%;\r\n    }\r\n  \r\n  \r\n  \r\n  .device-card {\r\n      display: flex;\r\n      flex-direction: column;\r\n      gap: 4rem;\r\n      width: 80%;\r\n      height: 100vh;\r\n      margin: 10px;\r\n      align-self: center;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        max-width: $max-mobile-width;\r\n      }\r\n  @media screen and (max-width: $max-mobile-width) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n  }\r\n  \r\n  .back-button{\r\n  float: left;\r\n  }\r\n  }\r\n  .detail{\r\n      display: flex;\r\n      flex-direction: column;\r\n      align-self: center;\r\n      width: 420px;\r\n      gap: 1rem;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          display: flex;\r\n          flex-direction: column;\r\n          gap: 1rem;\r\n          width: 300px;\r\n          max-width: $max-mobile-width;\r\n  \r\n        }\r\n  }\r\n  \r\n  \r\n  \r\n  .mat-form-field {\r\n      width: 400px;\r\n      @media screen and (max-width: $max-mobile-width) {\r\n          width: 330px;\r\n        }\r\n    }\r\n  .description-area\r\n  {\r\n      height: 100px;\r\n  }\r\n  .textarea{\r\n      height: 100px;\r\n    }\r\n  \r\n  .input-picture{\r\n      align-self: center;\r\n  }\r\n  .green-icon {\r\n      color: greenyellow;\r\n      align-content:end;\r\n  }",
+                    "styleUrl": "./fish-farm-edit-configuration.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "dialog",
+                        "type": "MatDialog",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"device-card\">\r\n    <div class=\"detail\">\r\n        <h3>Sensor</h3>\r\n        <mat-grid-list cols=\"6\" rowHeight=\"30px\">\r\n            <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n                <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\">arrow_circle_left</mat-icon>\r\n            </mat-grid-tile>\r\n        </mat-grid-list>\r\n    \r\n        <h3>Nueva piscigranja</h3>\r\n       \r\n        <form class=\"deviceForm\" (submit)=\"onSubmit($event)\">\r\n            <h2>Sensores de temperatura</h2>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango minimo óptimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre\"/>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango máximo optimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\"/>\r\n            </mat-form-field>\r\n            <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Añadir sensor</button>\r\n            <h2>Sensores de pH</h2>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango minimo óptimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre\"/>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango máximo optimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\"/>\r\n            </mat-form-field>\r\n            <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Añadir sensor</button>\r\n            <h2>Sensores de oxigeno disuelto</h2>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango minimo óptimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre\"/>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Rango máximo optimo</mat-label>\r\n                <input type=\"rexr\" matInput placeholder=\"Nombre del sensor\"/>\r\n            </mat-form-field>\r\n            <button type=\"button\" mat-button color=\"secondary\" (click)=\"save()\">Añadir sensor</button>\r\n            <button mat-button color=\"primary\">Guardar configuracion</button>\r\n        </form>\r\n        \r\n    </div>\r\n    </div>"
+        },
+        {
             "name": "LoginComponent",
             "id": "component-LoginComponent-00776e8171dfd32ee644ba864d7ce074",
             "file": "src/app/Pages/login/login.component.ts",
@@ -1066,7 +2145,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"./../../../tokens.scss\";\r\n.mainLogo {\r\n  height: 4rem;\r\n  width: 14rem;\r\n  object-fit: cover;\r\n}\r\n\r\n.main {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n}\r\n\r\n.table-main {\r\n    width: 13rem;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n}\r\n",
+                    "data": "@import \"./../../../tokens.scss\";\r\n.mainLogo {\r\n  height: 4rem;\r\n  align-self: flex-start;\r\n  width: 14rem;\r\n  object-fit: cover;\r\n}\r\n\r\n.main {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    width: 100vw;\r\n    height: 100vh;\r\n\r\n    @media screen and (max-width: $max-mobile-width) {\r\n      display: flex;\r\n      flex-direction: column;\r\n      gap: 1rem;\r\n      max-width: $max-mobile-width;\r\n    }\r\n}\r\n.account-box{\r\n  \r\n  float: right;\r\n}\r\nheader{\r\n  margin: 10px;\r\n  width: 80%;\r\n  align-self: center;\r\n}\r\n.table-main {\r\n    width: 13rem;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    max-width: $max-mobile-width;\r\n}\r\n",
                     "styleUrl": "./main.component.scss"
                 }
             ],
@@ -1100,7 +2179,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"main\">\r\n    <mat-grid-list cols=\"4\" rowHeight=\"100px\">\r\n        <mat-grid-tile mat-grid-tile [colspan]=\"3\">\r\n            <img class=\"mainLogo\" src=\"assets/wide-logo.jpg\" alt=\"wide-logo\" />\r\n        </mat-grid-tile>\r\n        <mat-grid-tile mat-grid-tile [colspan]=\"1\">\r\n            <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\" (click)=\"openDialog()\" >account_box</mat-icon>\r\n        </mat-grid-tile>\r\n    </mat-grid-list>\r\n    <router-outlet></router-outlet>\r\n</div>\r\n"
+            "templateData": "<div class=\"main\">\r\n    <header>\r\n        <img class=\"mainLogo\" src=\"assets/wide-logo.jpg\" alt=\"wide-logo\" />\r\n\r\n        <mat-icon class=\"account-box\" aria-hidden=\"false\" aria-label=\"Example home icon\" (click)=\"openDialog()\">\r\n            account_box</mat-icon>\r\n    </header>\r\n\r\n    <router-outlet></router-outlet>\r\n</div>"
         },
         {
             "name": "MainRecoverPasswordComponent",
@@ -1490,7 +2569,7 @@
         },
         {
             "name": "RemoveFishFarmComponent",
-            "id": "component-RemoveFishFarmComponent-74d45eec2a38e05b97193d8e0eac55be",
+            "id": "component-RemoveFishFarmComponent-4e34d197c381ec6c2c9b9e627f0f7498",
             "file": "src/app/components/admin/remove-fish-farm/remove-fish-farm.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1561,7 +2640,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Inject } from '@angular/core';\nimport {\n  MatDialog,\n  MatDialogRef,\n  MAT_DIALOG_DATA,\n} from '@angular/material/dialog';\n\nexport interface DialogData {\n  animal: string;\n  name: string;\n}\n\n@Component({\n  selector: 'dialog-overview-example-dialog',\n  // templateUrl: 'dialog-overview-example-dialog.html',\n  template: `\n    <h1 mat-dialog-title>Hi {{ data.name }}</h1>\n    <div mat-dialog-content>\n      <p>What's your favorite animal?</p>\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Favorite Animal</mat-label>\n        <input matInput [(ngModel)]=\"data.animal\" />\n      </mat-form-field>\n    </div>\n    <div mat-dialog-actions>\n      <button mat-button (click)=\"onNoClick()\">No Thanks</button>\n      <button mat-button [mat-dialog-close]=\"data.animal\" cdkFocusInitial>\n        Ok\n      </button>\n    </div>\n  `,\n})\nexport class DialogOverviewExampleDialog {\n  constructor(\n    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,\n    @Inject(MAT_DIALOG_DATA) public data: DialogData\n  ) {}\n\n  onNoClick(): void {\n    this.dialogRef.close();\n  }\n}\n\n@Component({\n  selector: 'app-remove-fish-farm',\n  templateUrl: './remove-fish-farm.component.html',\n  styleUrls: ['./remove-fish-farm.component.scss'],\n})\nexport class RemoveFishFarmComponent {\n  animal: string = '';\n  name: string = '';\n\n  constructor(public dialog: MatDialog) {}\n\n  openDialog(): void {\n    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {\n      width: '250px',\n      data: { name: this.name, animal: this.animal },\n    });\n\n    dialogRef.afterClosed().subscribe((result) => {\n      console.log('The dialog was closed');\n      this.animal = result;\n    });\n  }\n}\n",
+            "sourceCode": "import { Component, Inject, OnInit } from '@angular/core';\r\nimport {\r\n  MatDialog,\r\n  MatDialogRef,\r\n  MAT_DIALOG_DATA,\r\n} from '@angular/material/dialog';\r\n\r\nexport interface DialogData {\r\n  animal: string;\r\n  name: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'dialog-overview-example-dialog',\r\n  // templateUrl: 'dialog-overview-example-dialog.html',\r\n  template: `\r\n    <h1 mat-dialog-title>Hi {{ data.name }}</h1>\r\n    <div mat-dialog-content>\r\n      <p>What's your favorite animal?</p>\r\n      <mat-form-field appearance=\"fill\">\r\n        <mat-label>Favorite Animal</mat-label>\r\n        <input matInput [(ngModel)]=\"data.animal\" />\r\n      </mat-form-field>\r\n    </div>\r\n    <div mat-dialog-actions>\r\n      <button mat-button (click)=\"onNoClick()\">No Thanks</button>\r\n      <button mat-button [mat-dialog-close]=\"data.animal\" cdkFocusInitial>\r\n        Ok\r\n      </button>\r\n    </div>\r\n  `,\r\n})\r\nexport class DialogOverviewExampleDialog {\r\n  constructor(\r\n    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,\r\n    @Inject(MAT_DIALOG_DATA) public data: DialogData\r\n  ) {}\r\n\r\n  onNoClick(): void {\r\n    this.dialogRef.close();\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: 'app-remove-fish-farm',\r\n  templateUrl: './remove-fish-farm.component.html',\r\n  styleUrls: ['./remove-fish-farm.component.scss'],\r\n})\r\nexport class RemoveFishFarmComponent {\r\n  animal: string = '';\r\n  name: string = '';\r\n\r\n  constructor(public dialog: MatDialog) {}\r\n\r\n  openDialog(): void {\r\n    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {\r\n      width: '250px',\r\n      data: { name: this.name, animal: this.animal },\r\n    });\r\n\r\n    dialogRef.afterClosed().subscribe((result) => {\r\n      console.log('The dialog was closed');\r\n      this.animal = result;\r\n    });\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1596,19 +2675,19 @@
                     }
                 ]
             },
-            "templateData": "<ol>\n  <li>\n    <mat-form-field appearance=\"fill\">\n      <mat-label>What's your name?</mat-label>\n      <input matInput [(ngModel)]=\"name\" />\n    </mat-form-field>\n  </li>\n  <li>\n    <button mat-raised-button (click)=\"openDialog()\">Pick one</button>\n  </li>\n  <li *ngIf=\"animal\">\n    You chose: <i>{{ animal }}</i>\n  </li>\n</ol>\n"
+            "templateData": "<ol>\r\n  <li>\r\n    <mat-form-field appearance=\"fill\">\r\n      <mat-label>What's your name?</mat-label>\r\n      <input matInput [(ngModel)]=\"name\" />\r\n    </mat-form-field>\r\n  </li>\r\n  <li>\r\n    <button mat-raised-button (click)=\"openDialog()\">Pick one</button>\r\n  </li>\r\n  <li *ngIf=\"animal\">\r\n    You chose: <i>{{ animal }}</i>\r\n  </li>\r\n</ol>\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-cb18f275c6afbebe5b04e51fd33b1b02",
+            "id": "module-AppModule-f13bfa8ab1e0d17d4c0671d3f38799ef",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './Pages/login/login.component';\r\nimport { AdminComponent } from './Pages/admin/admin.component';\r\nimport { MainComponent } from './Pages/main/main.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatListModule } from '@angular/material/list';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatMenuModule } from '@angular/material/menu';\r\nimport { MatGridList, MatGridListModule } from '@angular/material/grid-list';\r\nimport { MatRadioModule } from '@angular/material/radio';\r\nimport { MatDialogModule } from '@angular/material/dialog';\r\nimport { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';\r\nimport { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';\r\nimport { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';\r\nimport { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';\r\nimport { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';\r\nimport { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';\r\nimport { DialogSavedComponent } from './Pages/dialog-saved/dialog-saved.component';\r\nimport { DialogProfileComponent } from './Pages/dialog-profile/dialog-profile.component';\r\nimport { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';\r\nimport { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';\r\nimport { FishFarmDetailsComponent } from './components/admin/fish-farm-details/fish-farm-details.component';\nimport { RemoveFishFarmComponent } from './components/admin/remove-fish-farm/remove-fish-farm.component';\r\n\r\nexport const AngularMaterialModules = {\r\n  imports: [\r\n    MatGridListModule,\r\n    MatButtonModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatListModule,\r\n    MatCardModule,\r\n    MatIconModule,\r\n    MatRadioModule,\r\n    MatDialogModule,\r\n    MatMenuModule,\r\n  ],\r\n  exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],\r\n};\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    LoginComponent,\r\n    AdminComponent,\r\n    MainComponent,\r\n    RecoverPasswordComponent,\r\n    EmailSentComponent,\r\n    NewPasswordComponent,\r\n    RecoveredMessageComponent,\r\n    DisplayFishFarmsComponent,\r\n    DoorSettingsComponent,\r\n    DialogSavedComponent,\r\n    DialogProfileComponent,\r\n    CompanySettingsComponent,\r\n    MainRecoverPasswordComponent,\r\n    FishFarmDetailsComponent,\r\n    RemoveFishFarmComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    BrowserAnimationsModule,\r\n    ...AngularMaterialModules.imports,\r\n  ],\r\n  exports: [...AngularMaterialModules.exports],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './Pages/login/login.component';\r\nimport { AdminComponent } from './Pages/admin/admin.component';\r\nimport { MainComponent } from './Pages/main/main.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatListModule } from '@angular/material/list';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatMenuModule } from '@angular/material/menu';\r\nimport { MatGridList, MatGridListModule } from '@angular/material/grid-list';\r\nimport { MatRadioModule } from '@angular/material/radio';\r\nimport { MatDialogModule } from '@angular/material/dialog';\r\nimport { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';\r\nimport { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';\r\nimport { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';\r\nimport { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';\r\nimport { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';\r\nimport { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';\r\nimport { DialogSavedComponent } from './Pages/dialog-saved/dialog-saved.component';\r\nimport { DialogProfileComponent } from './Pages/dialog-profile/dialog-profile.component';\r\nimport { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';\r\nimport { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';\r\nimport { FishFarmDetailsComponent } from './components/admin/fish-farm-details/fish-farm-details.component';\r\nimport { RemoveFishFarmComponent } from './components/admin/remove-fish-farm/remove-fish-farm.component';\r\n\r\nexport const AngularMaterialModules = {\r\n  imports: [\r\n    MatGridListModule,\r\n    MatButtonModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatListModule,\r\n    MatCardModule,\r\n    MatIconModule,\r\n    MatRadioModule,\r\n    MatDialogModule,\r\n    MatMenuModule,\r\n  ],\r\n  exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule],\r\n};\r\nimport { DeviceDetailComponent } from './Pages/device-detail/device-detail.component';\r\nimport {MatSlideToggleModule} from '@angular/material/slide-toggle';\r\nimport { DialogDeviceMoreComponent } from './Pages/dialog-device-more/dialog-device-more.component';\r\nimport { DialogDeviceUninstallComponent } from './Pages/dialog-device-uninstall/dialog-device-uninstall.component';\r\nimport { DeviceAddComponent } from './Pages/device-add/device-add.component';\r\nimport { AddFishFarmComponent } from './Pages/add-fish-farm/add-fish-farm.component';\r\nimport { AddFishFarmConfigurationComponent } from './Pages/add-fish-farm-configuration/add-fish-farm-configuration.component';\r\nimport { FishFarmEditComponent } from './Pages/fish-farm-edit/fish-farm-edit.component';\r\nimport { FishFarmEditConfigurationComponent } from './Pages/fish-farm-edit-configuration/fish-farm-edit-configuration.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    LoginComponent,\r\n    AdminComponent,\r\n    MainComponent,\r\n    RecoverPasswordComponent,\r\n    EmailSentComponent,\r\n    NewPasswordComponent,\r\n    RecoveredMessageComponent,\r\n    DisplayFishFarmsComponent,\r\n    DoorSettingsComponent,\r\n    DialogSavedComponent,\r\n    DialogProfileComponent,\r\n    CompanySettingsComponent,\r\n    MainRecoverPasswordComponent,\r\n    FishFarmDetailsComponent,\r\n    RemoveFishFarmComponent,\r\n    DeviceDetailComponent,\r\n    DialogDeviceMoreComponent,\r\n    DialogDeviceUninstallComponent,\r\n    DeviceAddComponent,\r\n    AddFishFarmComponent,\r\n    AddFishFarmConfigurationComponent,\r\n    FishFarmEditComponent,\r\n    FishFarmEditConfigurationComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    BrowserAnimationsModule,\r\n    ...AngularMaterialModules.imports,\r\n    MatGridListModule,\r\n    MatButtonModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatListModule,\r\n    MatCardModule,\r\n    MatIconModule,\r\n    MatRadioModule,\r\n    MatDialogModule,\r\n    MatSlideToggleModule\r\n  ],\r\n  exports: [...AngularMaterialModules.exports],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1618,6 +2697,12 @@
                     "type": "declarations",
                     "elements": [
                         {
+                            "name": "AddFishFarmComponent"
+                        },
+                        {
+                            "name": "AddFishFarmConfigurationComponent"
+                        },
+                        {
                             "name": "AdminComponent"
                         },
                         {
@@ -1625,6 +2710,18 @@
                         },
                         {
                             "name": "CompanySettingsComponent"
+                        },
+                        {
+                            "name": "DeviceAddComponent"
+                        },
+                        {
+                            "name": "DeviceDetailComponent"
+                        },
+                        {
+                            "name": "DialogDeviceMoreComponent"
+                        },
+                        {
+                            "name": "DialogDeviceUninstallComponent"
                         },
                         {
                             "name": "DialogProfileComponent"
@@ -1643,6 +2740,12 @@
                         },
                         {
                             "name": "FishFarmDetailsComponent"
+                        },
+                        {
+                            "name": "FishFarmEditComponent"
+                        },
+                        {
+                            "name": "FishFarmEditConfigurationComponent"
                         },
                         {
                             "name": "LoginComponent"
@@ -1698,13 +2801,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-60295deb05f588b770beb1b86c667363",
+            "id": "module-AppRoutingModule-106ad01dcd0a9139d5cc7e2a8566ee02",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { AdminComponent } from './Pages/admin/admin.component';\r\nimport { LoginComponent } from './Pages/login/login.component';\r\nimport { MainComponent } from './Pages/main/main.component';\r\nimport { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';\r\nimport { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';\r\nimport { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';\r\nimport { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';\r\nimport { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';\r\nimport { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';\r\nimport { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';\r\nimport { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: 'login',\r\n    component: LoginComponent,\r\n  },\r\n  /*Iglesia y Moleche: En mi local no se refleja el responsive de ninguna de las vistas*/\r\n  {\r\n    path: 'recover-password',\r\n    component: MainRecoverPasswordComponent,\r\n    children: [\r\n      {\r\n        path: '',\r\n        component: RecoverPasswordComponent,\r\n      },\r\n      {\r\n        path: 'email-sent',\r\n        component: EmailSentComponent,\r\n      },\r\n      {\r\n        path: 'new-password',\r\n        component: NewPasswordComponent,\r\n      },\r\n      {\r\n        path: 'recovered',\r\n        component: RecoveredMessageComponent,\r\n      },\r\n    ]\r\n  },\r\n  {\r\n    path: 'admin',\r\n    component: AdminComponent,\r\n    children: [\r\n      {\r\n        path: '',\r\n        component: MainComponent,\r\n        children: [\r\n          {\r\n            path: '',\r\n            component: DisplayFishFarmsComponent,\r\n          },\r\n          {\r\n            path: 'settings',\r\n            component: DoorSettingsComponent,\r\n          },\r\n          {\r\n            path: 'company',\r\n            component: CompanySettingsComponent,\r\n          },\r\n        ],\r\n      },\r\n    ],\r\n  },\r\n  \r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule],\r\n})\r\nexport class AppRoutingModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { AdminComponent } from './Pages/admin/admin.component';\r\nimport { LoginComponent } from './Pages/login/login.component';\r\nimport { MainComponent } from './Pages/main/main.component';\r\nimport { EmailSentComponent } from './Pages/recover-password/email-sent/email-sent.component';\r\nimport { NewPasswordComponent } from './Pages/recover-password/new-password/new-password.component';\r\nimport { RecoverPasswordComponent } from './Pages/recover-password/recover-password.component';\r\nimport { RecoveredMessageComponent } from './Pages/recover-password/recovered-message/recovered-message.component';\r\nimport { DisplayFishFarmsComponent } from './Pages/display-fish-farms/display-fish-farms.component';\r\nimport { DoorSettingsComponent } from './Pages/door-settings/door-settings.component';\r\nimport { CompanySettingsComponent } from './Pages/company-settings/company-settings.component';\r\nimport { MainRecoverPasswordComponent } from './Pages/main-recover-password/main-recover-password.component';\r\nimport { DeviceDetailComponent } from './Pages/device-detail/device-detail.component';\r\nimport { DeviceAddComponent } from './Pages/device-add/device-add.component';\r\nimport { AddFishFarmComponent } from './Pages/add-fish-farm/add-fish-farm.component';\r\nimport { AddFishFarmConfigurationComponent } from './Pages/add-fish-farm-configuration/add-fish-farm-configuration.component';\r\nimport { FishFarmEditComponent } from './Pages/fish-farm-edit/fish-farm-edit.component';\r\nimport { FishFarmEditConfigurationComponent } from './Pages/fish-farm-edit-configuration/fish-farm-edit-configuration.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: 'login',\r\n    component: LoginComponent,\r\n  },\r\n  /*Iglesia y Moleche: En mi local no se refleja el responsive de ninguna de las vistas*/\r\n  {\r\n    path: 'recover-password',\r\n    component: MainRecoverPasswordComponent,\r\n    children: [\r\n      {\r\n        path: '',\r\n        component: RecoverPasswordComponent,\r\n      },\r\n      {\r\n        path: 'email-sent',\r\n        component: EmailSentComponent,\r\n      },\r\n      {\r\n        path: 'new-password',\r\n        component: NewPasswordComponent,\r\n      },\r\n      {\r\n        path: 'recovered',\r\n        component: RecoveredMessageComponent,\r\n      },\r\n    ]\r\n  },\r\n\r\n  {\r\n    path: 'admin',\r\n    component: AdminComponent,\r\n    children: [\r\n      {\r\n        path: '',\r\n        component: MainComponent,\r\n        children: [\r\n          {\r\n            path: '',\r\n            component: DisplayFishFarmsComponent,\r\n          },\r\n          {\r\n            path: 'device',\r\n            component: DeviceDetailComponent,\r\n          },\r\n          {\r\n            path: 'fishfarm',\r\n            component: AddFishFarmComponent,\r\n            children: [\r\n              {\r\n                path: 'configuration',\r\n                component: AddFishFarmConfigurationComponent,\r\n              },\r\n            ]\r\n          },\r\n          {\r\n            path: 'configuration',\r\n            component: AddFishFarmConfigurationComponent,\r\n          },\r\n          {\r\n            path: 'edit',\r\n            component: FishFarmEditComponent,\r\n          },\r\n          {\r\n            path: 'edit-config',\r\n            component: FishFarmEditConfigurationComponent,\r\n          },\r\n          {\r\n            path: 'add',\r\n            component: DeviceAddComponent,\r\n          },\r\n          {\r\n            path: 'settings',\r\n            component: DoorSettingsComponent,\r\n          },\r\n          {\r\n            path: 'company',\r\n            component: CompanySettingsComponent,\r\n          },\r\n        ],\r\n      },\r\n    ],\r\n  },\r\n  \r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule],\r\n})\r\nexport class AppRoutingModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1759,16 +2862,6 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1776,14 +2869,14 @@
                 "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
-                "name": "Primary",
+                "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts",
+                "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\r\n  props: {\r\n    label: 'FishFarmDetailsComponent',\r\n  },\r\n})"
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "Primary",
@@ -1794,6 +2887,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => ({\r\n  props: {\r\n    label: 'RemoveFishFarmComponent',\r\n  },\r\n})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => ({\r\n  props: {\r\n    label: 'FishFarmDetailsComponent',\r\n  },\r\n})"
             },
             {
                 "name": "require",
@@ -1854,18 +2957,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -1878,16 +2969,16 @@
                     "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
-            "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts": [
+            "src/environments/environment.ts": [
                 {
-                    "name": "Primary",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts",
+                    "file": "src/environments/environment.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n  props: {\r\n    label: 'FishFarmDetailsComponent',\r\n  },\r\n})"
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/app/components/admin/remove-fish-farm/remove-fish-farm.stories.ts": [
@@ -1900,6 +2991,18 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "() => ({\r\n  props: {\r\n    label: 'RemoveFishFarmComponent',\r\n  },\r\n})"
+                }
+            ],
+            "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/admin/fish-farm-details/fish-farm-details.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  props: {\r\n    label: 'FishFarmDetailsComponent',\r\n  },\r\n})"
                 }
             ]
         },
@@ -1970,6 +3073,36 @@
                                         "component": "DisplayFishFarmsComponent"
                                     },
                                     {
+                                        "path": "device",
+                                        "component": "DeviceDetailComponent"
+                                    },
+                                    {
+                                        "path": "fishfarm",
+                                        "component": "AddFishFarmComponent",
+                                        "children": [
+                                            {
+                                                "path": "configuration",
+                                                "component": "AddFishFarmConfigurationComponent"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "path": "configuration",
+                                        "component": "AddFishFarmConfigurationComponent"
+                                    },
+                                    {
+                                        "path": "edit",
+                                        "component": "FishFarmEditComponent"
+                                    },
+                                    {
+                                        "path": "edit-config",
+                                        "component": "FishFarmEditConfigurationComponent"
+                                    },
+                                    {
+                                        "path": "add",
+                                        "component": "DeviceAddComponent"
+                                    },
+                                    {
                                         "path": "settings",
                                         "component": "DoorSettingsComponent"
                                     },
@@ -1991,6 +3124,24 @@
         "status": "low",
         "files": [
             {
+                "filePath": "src/app/Pages/add-fish-farm-configuration/add-fish-farm-configuration.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AddFishFarmConfigurationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/add-fish-farm/add-fish-farm.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AddFishFarmComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/Pages/admin/admin.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2006,6 +3157,42 @@
                 "name": "CompanySettingsComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/device-add/device-add.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DeviceAddComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/device-detail/device-detail.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DeviceDetailComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/dialog-device-more/dialog-device-more.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DialogDeviceMoreComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/dialog-device-uninstall/dialog-device-uninstall.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DialogDeviceUninstallComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2049,6 +3236,24 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "DoorSettingsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/fish-farm-edit-configuration/fish-farm-edit-configuration.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FishFarmEditConfigurationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Pages/fish-farm-edit/fish-farm-edit.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FishFarmEditComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
                 "status": "low"

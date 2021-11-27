@@ -1,32 +1,36 @@
-<div class="login">
-  <img class="loginLogo" src="assets/wide-logo.jpg" alt="wide-logo" />
-  <h1>Inicia sesión</h1>
+<div class="loginContainer">
+  <img class="loginHeroLogo" src="assets/wide-logo.jpg" alt="wide-hero-logo" />
 
-  <p>
-    Inicia sesión con tu usuario o correo electrónico y contraseña brindados por
-    nosotros
-  </p>
+  <div class="login">
+    <img class="loginLogo" src="assets/wide-logo.jpg" alt="wide-logo" />
+    <h1>Inicia sesión</h1>
 
-  <form class="loginForm" (submit)="onSubmit($event)">
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre de usuario o correo electrónico</mat-label>
-      <input type="email" matInput placeholder="Ex. user@example.com" />
-    </mat-form-field>
+    <p>
+      Inicia sesión con tu usuario o correo electrónico y contraseña brindados
+      por nosotros
+    </p>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Contraseña</mat-label>
-      <input type="password" matInput id="password" />
-    </mat-form-field>
+    <form class="loginForm" (submit)="onSubmit($event)">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre de usuario o correo electrónico</mat-label>
+        <input type="email" matInput placeholder="Ex. user@example.com" />
+      </mat-form-field>
 
-    <button mat-button color ="primary" >Entrar</button>
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput id="password" />
+      </mat-form-field>
 
-    <div class="loginOptions">
-      <label for="remember-me">
-        <input type="checkbox" id="remember-me" />
-        Recuérdame
-      </label>
+      <button mat-button color="primary">Entrar</button>
 
-      <a href="/recover-password">Olvidé mi contraseña</a>
-    </div>
-  </form>
+      <div class="loginOptions">
+        <label for="remember-me">
+          <input type="checkbox" id="remember-me" />
+          Recuérdame
+        </label>
+
+        <a href="/recover-password">Olvidé mi contraseña</a>
+      </div>
+    </form>
+  </div>
 </div>
